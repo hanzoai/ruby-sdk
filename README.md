@@ -15,7 +15,7 @@ The underlying REST API documentation can be found on [docs.hanzo.ai](https://do
 To use this gem during the beta, install directly from GitHub with Bundler by adding the following to your application's `Gemfile`:
 
 ```ruby
-gem "Hanzo-AI", git: "https://github.com/stainless-sdks/Hanzo-AI-ruby", branch: "main"
+gem "Hanzo-AI", git: "https://github.com/hanzoai/ruby-sdk", branch: "main"
 ```
 
 To fetch an initial copy of the gem:
