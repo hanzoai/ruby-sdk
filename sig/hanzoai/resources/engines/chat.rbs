@@ -1,0 +1,14 @@
+module Hanzoai
+  module Resources
+    class Engines
+      class Chat
+        def complete: (
+          String model,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

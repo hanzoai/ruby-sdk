@@ -1,0 +1,59 @@
+module Hanzoai
+  module Models
+    type key_list_params =
+      {
+        include_team_keys: bool,
+        key_alias: String?,
+        organization_id: String?,
+        page: Integer,
+        return_full_object: bool,
+        size: Integer,
+        team_id: String?,
+        user_id: String?
+      }
+      & Hanzoai::request_parameters
+
+    class KeyListParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_reader include_team_keys: bool?
+
+      def include_team_keys=: (bool) -> bool
+
+      attr_accessor key_alias: String?
+
+      attr_accessor organization_id: String?
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader return_full_object: bool?
+
+      def return_full_object=: (bool) -> bool
+
+      attr_reader size: Integer?
+
+      def size=: (Integer) -> Integer
+
+      attr_accessor team_id: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        ?include_team_keys: bool,
+        ?key_alias: String?,
+        ?organization_id: String?,
+        ?page: Integer,
+        ?return_full_object: bool,
+        ?size: Integer,
+        ?team_id: String?,
+        ?user_id: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::key_list_params
+    end
+  end
+end

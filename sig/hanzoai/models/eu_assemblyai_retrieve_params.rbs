@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type eu_assemblyai_retrieve_params = {  } & Hanzoai::request_parameters
+
+    class EuAssemblyaiRetrieveParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::eu_assemblyai_retrieve_params
+    end
+  end
+end

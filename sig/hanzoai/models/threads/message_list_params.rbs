@@ -1,0 +1,16 @@
+module Hanzoai
+  module Models
+    module Threads
+      type message_list_params = {  } & Hanzoai::request_parameters
+
+      class MessageListParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::Threads::message_list_params
+      end
+    end
+  end
+end

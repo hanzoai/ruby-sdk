@@ -1,0 +1,38 @@
+module Hanzoai
+  module Models
+    type cache_ping_response =
+      {
+        cache_type: String,
+        status: String,
+        health_check_cache_params: top?,
+        llm_cache_params: String?,
+        ping_response: bool?,
+        set_cache_response: String?
+      }
+
+    class CachePingResponse < Hanzoai::BaseModel
+      attr_accessor cache_type: String
+
+      attr_accessor status: String
+
+      attr_accessor health_check_cache_params: top?
+
+      attr_accessor llm_cache_params: String?
+
+      attr_accessor ping_response: bool?
+
+      attr_accessor set_cache_response: String?
+
+      def initialize: (
+        cache_type: String,
+        status: String,
+        ?health_check_cache_params: top?,
+        ?llm_cache_params: String?,
+        ?ping_response: bool?,
+        ?set_cache_response: String?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::cache_ping_response
+    end
+  end
+end

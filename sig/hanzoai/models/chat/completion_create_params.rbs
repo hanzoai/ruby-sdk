@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    module Chat
+      type completion_create_params =
+        { model: String? } & Hanzoai::request_parameters
+
+      class CompletionCreateParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor model: String?
+
+        def initialize: (
+          ?model: String?,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Chat::completion_create_params
+      end
+    end
+  end
+end

@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type bedrock_update_params = {  } & Hanzoai::request_parameters
+
+    class BedrockUpdateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::bedrock_update_params
+    end
+  end
+end

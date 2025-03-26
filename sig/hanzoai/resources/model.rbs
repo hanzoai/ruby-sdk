@@ -1,0 +1,20 @@
+module Hanzoai
+  module Resources
+    class Model
+      attr_reader info: Hanzoai::Resources::Model::Info
+
+      attr_reader update: Hanzoai::Resources::Model::Update
+
+      def create: (
+        llm_params: Hanzoai::Models::ModelCreateParams::LlmParams,
+        model_info: Hanzoai::Models::ModelInfo,
+        model_name: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def delete: (id: String, ?request_options: Hanzoai::request_opts) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

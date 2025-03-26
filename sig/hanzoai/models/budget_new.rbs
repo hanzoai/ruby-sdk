@@ -1,0 +1,73 @@
+module Hanzoai
+  module Models
+    type budget_new =
+      {
+        budget_duration: String?,
+        budget_id: String?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        model_max_budget: ::Hash[Symbol, Hanzoai::Models::BudgetNew::ModelMaxBudget]?,
+        rpm_limit: Integer?,
+        soft_budget: Float?,
+        tpm_limit: Integer?
+      }
+
+    class BudgetNew < Hanzoai::BaseModel
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_id: String?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_accessor model_max_budget: ::Hash[Symbol, Hanzoai::Models::BudgetNew::ModelMaxBudget]?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor soft_budget: Float?
+
+      attr_accessor tpm_limit: Integer?
+
+      def initialize: (
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?model_max_budget: ::Hash[Symbol, Hanzoai::Models::BudgetNew::ModelMaxBudget]?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::budget_new
+
+      type model_max_budget =
+        {
+          budget_duration: String?,
+          max_budget: Float?,
+          rpm_limit: Integer?,
+          tpm_limit: Integer?
+        }
+
+      class ModelMaxBudget < Hanzoai::BaseModel
+        attr_accessor budget_duration: String?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor rpm_limit: Integer?
+
+        attr_accessor tpm_limit: Integer?
+
+        def initialize: (
+          ?budget_duration: String?,
+          ?max_budget: Float?,
+          ?rpm_limit: Integer?,
+          ?tpm_limit: Integer?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::BudgetNew::model_max_budget
+      end
+    end
+  end
+end

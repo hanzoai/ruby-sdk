@@ -1,0 +1,13 @@
+module Hanzoai
+  module Models
+    type block_key_request = { key: String }
+
+    class BlockKeyRequest < Hanzoai::BaseModel
+      attr_accessor key: String
+
+      def initialize: (key: String) -> void
+
+      def to_hash: -> Hanzoai::Models::block_key_request
+    end
+  end
+end

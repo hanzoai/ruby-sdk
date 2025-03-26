@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    type team_list_available_params =
+      { response_model: top } & Hanzoai::request_parameters
+
+    class TeamListAvailableParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_reader response_model: top?
+
+      def response_model=: (top) -> top
+
+      def initialize: (
+        ?response_model: top,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::team_list_available_params
+    end
+  end
+end

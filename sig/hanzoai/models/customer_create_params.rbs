@@ -1,0 +1,111 @@
+module Hanzoai
+  module Models
+    type customer_create_params =
+      {
+        user_id: String,
+        alias_: String?,
+        allowed_model_region: Hanzoai::Models::CustomerCreateParams::allowed_model_region?,
+        blocked: bool,
+        budget_duration: String?,
+        budget_id: String?,
+        default_model: String?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        model_max_budget: ::Hash[Symbol, Hanzoai::Models::CustomerCreateParams::ModelMaxBudget]?,
+        rpm_limit: Integer?,
+        soft_budget: Float?,
+        tpm_limit: Integer?
+      }
+      & Hanzoai::request_parameters
+
+    class CustomerCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor user_id: String
+
+      attr_accessor alias_: String?
+
+      attr_accessor allowed_model_region: Hanzoai::Models::CustomerCreateParams::allowed_model_region?
+
+      attr_reader blocked: bool?
+
+      def blocked=: (bool) -> bool
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_id: String?
+
+      attr_accessor default_model: String?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_accessor model_max_budget: ::Hash[Symbol, Hanzoai::Models::CustomerCreateParams::ModelMaxBudget]?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor soft_budget: Float?
+
+      attr_accessor tpm_limit: Integer?
+
+      def initialize: (
+        user_id: String,
+        ?alias_: String?,
+        ?allowed_model_region: Hanzoai::Models::CustomerCreateParams::allowed_model_region?,
+        ?blocked: bool,
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?default_model: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?model_max_budget: ::Hash[Symbol, Hanzoai::Models::CustomerCreateParams::ModelMaxBudget]?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::customer_create_params
+
+      type allowed_model_region = :eu | :us
+
+      module AllowedModelRegion
+        extend Hanzoai::Enum
+
+        EU: :eu
+        US: :us
+
+        def self?.values: -> ::Array[Hanzoai::Models::CustomerCreateParams::allowed_model_region]
+      end
+
+      type model_max_budget =
+        {
+          budget_duration: String?,
+          max_budget: Float?,
+          rpm_limit: Integer?,
+          tpm_limit: Integer?
+        }
+
+      class ModelMaxBudget < Hanzoai::BaseModel
+        attr_accessor budget_duration: String?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor rpm_limit: Integer?
+
+        attr_accessor tpm_limit: Integer?
+
+        def initialize: (
+          ?budget_duration: String?,
+          ?max_budget: Float?,
+          ?rpm_limit: Integer?,
+          ?tpm_limit: Integer?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::CustomerCreateParams::model_max_budget
+      end
+    end
+  end
+end

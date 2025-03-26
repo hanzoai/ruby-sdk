@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type budget_settings_params =
+      { budget_id: String } & Hanzoai::request_parameters
+
+    class BudgetSettingsParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor budget_id: String
+
+      def initialize: (
+        budget_id: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::budget_settings_params
+    end
+  end
+end

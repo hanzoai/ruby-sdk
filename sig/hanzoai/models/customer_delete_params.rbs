@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type customer_delete_params =
+      { user_ids: ::Array[String] } & Hanzoai::request_parameters
+
+    class CustomerDeleteParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor user_ids: ::Array[String]
+
+      def initialize: (
+        user_ids: ::Array[String],
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::customer_delete_params
+    end
+  end
+end

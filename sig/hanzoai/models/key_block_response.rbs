@@ -1,0 +1,156 @@
+module Hanzoai
+  module Models
+    type key_block_response =
+      {
+        token: String?,
+        aliases: top,
+        allowed_cache_controls: ::Array[top]?,
+        blocked: bool?,
+        budget_duration: String?,
+        budget_reset_at: Time?,
+        config: top,
+        created_at: Time?,
+        created_by: String?,
+        expires: Hanzoai::Models::KeyBlockResponse::expires?,
+        key_alias: String?,
+        key_name: String?,
+        llm_budget_table: top?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        metadata: top,
+        model_max_budget: top,
+        model_spend: top,
+        models: ::Array[top],
+        org_id: String?,
+        permissions: top,
+        rpm_limit: Integer?,
+        soft_budget_cooldown: bool,
+        spend: Float,
+        team_id: String?,
+        tpm_limit: Integer?,
+        updated_at: Time?,
+        updated_by: String?,
+        user_id: String?
+      }
+
+    class KeyBlockResponse < Hanzoai::BaseModel
+      attr_accessor token: String?
+
+      attr_reader aliases: top?
+
+      def aliases=: (top) -> top
+
+      attr_accessor allowed_cache_controls: ::Array[top]?
+
+      attr_accessor blocked: bool?
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_reset_at: Time?
+
+      attr_reader config: top?
+
+      def config=: (top) -> top
+
+      attr_accessor created_at: Time?
+
+      attr_accessor created_by: String?
+
+      attr_accessor expires: Hanzoai::Models::KeyBlockResponse::expires?
+
+      attr_accessor key_alias: String?
+
+      attr_accessor key_name: String?
+
+      attr_accessor llm_budget_table: top?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_reader metadata: top?
+
+      def metadata=: (top) -> top
+
+      attr_reader model_max_budget: top?
+
+      def model_max_budget=: (top) -> top
+
+      attr_reader model_spend: top?
+
+      def model_spend=: (top) -> top
+
+      attr_reader models: ::Array[top]?
+
+      def models=: (::Array[top]) -> ::Array[top]
+
+      attr_accessor org_id: String?
+
+      attr_reader permissions: top?
+
+      def permissions=: (top) -> top
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_reader soft_budget_cooldown: bool?
+
+      def soft_budget_cooldown=: (bool) -> bool
+
+      attr_reader spend: Float?
+
+      def spend=: (Float) -> Float
+
+      attr_accessor team_id: String?
+
+      attr_accessor tpm_limit: Integer?
+
+      attr_accessor updated_at: Time?
+
+      attr_accessor updated_by: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        ?token: String?,
+        ?aliases: top,
+        ?allowed_cache_controls: ::Array[top]?,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?budget_reset_at: Time?,
+        ?config: top,
+        ?created_at: Time?,
+        ?created_by: String?,
+        ?expires: Hanzoai::Models::KeyBlockResponse::expires?,
+        ?key_alias: String?,
+        ?key_name: String?,
+        ?llm_budget_table: top?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top,
+        ?model_max_budget: top,
+        ?model_spend: top,
+        ?models: ::Array[top],
+        ?org_id: String?,
+        ?permissions: top,
+        ?rpm_limit: Integer?,
+        ?soft_budget_cooldown: bool,
+        ?spend: Float,
+        ?team_id: String?,
+        ?tpm_limit: Integer?,
+        ?updated_at: Time?,
+        ?updated_by: String?,
+        ?user_id: String?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::key_block_response
+
+      type expires = String | Time
+
+      module Expires
+        extend Hanzoai::Union
+
+        def self?.variants: -> [String, Time]
+      end
+    end
+  end
+end

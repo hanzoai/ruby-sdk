@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type client_get_home_params = {  } & Hanzoai::request_parameters
+
+    class ClientGetHomeParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::client_get_home_params
+    end
+  end
+end

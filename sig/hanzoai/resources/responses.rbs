@@ -1,0 +1,21 @@
+module Hanzoai
+  module Resources
+    class Responses
+      attr_reader input_items: Hanzoai::Resources::Responses::InputItems
+
+      def create: (?request_options: Hanzoai::request_opts) -> top
+
+      def retrieve: (
+        String response_id,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def delete: (
+        String response_id,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end
