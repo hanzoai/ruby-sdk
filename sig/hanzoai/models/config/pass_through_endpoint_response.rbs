@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    module Config
+      type pass_through_endpoint_response =
+        {
+          endpoints: ::Array[Hanzoai::Models::Config::PassThroughGenericEndpoint]
+        }
+
+      class PassThroughEndpointResponse < Hanzoai::BaseModel
+        attr_accessor endpoints: ::Array[Hanzoai::Models::Config::PassThroughGenericEndpoint]
+
+        def initialize: (
+          endpoints: ::Array[Hanzoai::Models::Config::PassThroughGenericEndpoint]
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Config::pass_through_endpoint_response
+      end
+    end
+  end
+end

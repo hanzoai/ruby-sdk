@@ -1,0 +1,54 @@
+module Hanzoai
+  module Models
+    type health_check_services_params =
+      { service: Hanzoai::Models::HealthCheckServicesParams::service }
+      & Hanzoai::request_parameters
+
+    class HealthCheckServicesParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor service: Hanzoai::Models::HealthCheckServicesParams::service
+
+      def initialize: (
+        service: Hanzoai::Models::HealthCheckServicesParams::service,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::health_check_services_params
+
+      type service =
+        :slack_budget_alerts
+        | :langfuse
+        | :slack
+        | :openmeter
+        | :webhook
+        | :email
+        | :braintrust
+        | :datadog
+        | String
+
+      module Service
+        extend Hanzoai::Union
+
+        SLACK_BUDGET_ALERTS: :slack_budget_alerts
+        LANGFUSE: :langfuse
+        SLACK: :slack
+        OPENMETER: :openmeter
+        WEBHOOK: :webhook
+        EMAIL: :email
+        BRAINTRUST: :braintrust
+        DATADOG: :datadog
+
+        def self?.variants: -> [(:slack_budget_alerts
+        | :langfuse
+        | :slack
+        | :openmeter
+        | :webhook
+        | :email
+        | :braintrust
+        | :datadog), String]
+      end
+    end
+  end
+end

@@ -1,0 +1,9 @@
+module Hanzoai
+  module Resources
+    class Chat
+      attr_reader completions: Hanzoai::Resources::Chat::Completions
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

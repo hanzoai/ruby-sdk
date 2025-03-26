@@ -1,0 +1,24 @@
+module Hanzoai
+  module Models
+    type team_list_params =
+      { organization_id: String?, user_id: String? }
+      & Hanzoai::request_parameters
+
+    class TeamListParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor organization_id: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        ?organization_id: String?,
+        ?user_id: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::team_list_params
+    end
+  end
+end

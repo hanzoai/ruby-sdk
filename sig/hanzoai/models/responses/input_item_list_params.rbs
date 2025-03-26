@@ -1,0 +1,16 @@
+module Hanzoai
+  module Models
+    module Responses
+      type input_item_list_params = {  } & Hanzoai::request_parameters
+
+      class InputItemListParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::Responses::input_item_list_params
+      end
+    end
+  end
+end

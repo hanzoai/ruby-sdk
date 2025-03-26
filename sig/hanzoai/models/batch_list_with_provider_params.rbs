@@ -1,0 +1,23 @@
+module Hanzoai
+  module Models
+    type batch_list_with_provider_params =
+      { after: String?, limit: Integer? } & Hanzoai::request_parameters
+
+    class BatchListWithProviderParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor after: String?
+
+      attr_accessor limit: Integer?
+
+      def initialize: (
+        ?after: String?,
+        ?limit: Integer?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::batch_list_with_provider_params
+    end
+  end
+end

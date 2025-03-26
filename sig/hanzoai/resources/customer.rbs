@@ -1,0 +1,59 @@
+module Hanzoai
+  module Resources
+    class Customer
+      def create: (
+        user_id: String,
+        ?alias_: String?,
+        ?allowed_model_region: Hanzoai::Models::CustomerCreateParams::allowed_model_region?,
+        ?blocked: bool,
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?default_model: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?model_max_budget: ::Hash[Symbol, Hanzoai::Models::CustomerCreateParams::ModelMaxBudget]?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def update: (
+        user_id: String,
+        ?alias_: String?,
+        ?allowed_model_region: Hanzoai::Models::CustomerUpdateParams::allowed_model_region?,
+        ?blocked: bool,
+        ?budget_id: String?,
+        ?default_model: String?,
+        ?max_budget: Float?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def list: (
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::customer_list_response
+
+      def delete: (
+        user_ids: ::Array[String],
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def block: (
+        user_ids: ::Array[String],
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def retrieve_info: (
+        end_user_id: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::CustomerRetrieveInfoResponse
+
+      def unblock: (
+        user_ids: ::Array[String],
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

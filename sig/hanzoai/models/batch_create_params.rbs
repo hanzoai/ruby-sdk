@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type batch_create_params =
+      { provider: String? } & Hanzoai::request_parameters
+
+    class BatchCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor provider: String?
+
+      def initialize: (
+        ?provider: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::batch_create_params
+    end
+  end
+end

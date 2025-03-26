@@ -1,0 +1,18 @@
+module Hanzoai
+  module Models
+    module FineTuning
+      module Jobs
+        type cancel_create_params = {  } & Hanzoai::request_parameters
+
+        class CancelCreateParams < Hanzoai::BaseModel
+          extend Hanzoai::RequestParameters::Converter
+          include Hanzoai::RequestParameters
+
+          def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+          def to_hash: -> Hanzoai::Models::FineTuning::Jobs::cancel_create_params
+        end
+      end
+    end
+  end
+end

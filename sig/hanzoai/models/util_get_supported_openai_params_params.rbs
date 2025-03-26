@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type util_get_supported_openai_params_params =
+      { model: String } & Hanzoai::request_parameters
+
+    class UtilGetSupportedOpenAIParamsParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor model: String
+
+      def initialize: (
+        model: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::util_get_supported_openai_params_params
+    end
+  end
+end

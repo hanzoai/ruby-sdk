@@ -1,9 +1,0 @@
-module HanzoAI
-  module Resources
-    class Images
-      attr_reader generations: HanzoAI::Resources::Images::Generations
-
-      def initialize: (client: HanzoAI::Client) -> void
-    end
-  end
-end

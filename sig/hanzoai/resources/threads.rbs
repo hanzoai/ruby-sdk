@@ -1,0 +1,18 @@
+module Hanzoai
+  module Resources
+    class Threads
+      attr_reader messages: Hanzoai::Resources::Threads::Messages
+
+      attr_reader runs: Hanzoai::Resources::Threads::Runs
+
+      def create: (?request_options: Hanzoai::request_opts) -> top
+
+      def retrieve: (
+        String thread_id,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

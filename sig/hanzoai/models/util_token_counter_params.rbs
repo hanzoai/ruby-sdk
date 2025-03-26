@@ -1,0 +1,27 @@
+module Hanzoai
+  module Models
+    type util_token_counter_params =
+      { model: String, messages: ::Array[top]?, prompt: String? }
+      & Hanzoai::request_parameters
+
+    class UtilTokenCounterParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor model: String
+
+      attr_accessor messages: ::Array[top]?
+
+      attr_accessor prompt: String?
+
+      def initialize: (
+        model: String,
+        ?messages: ::Array[top]?,
+        ?prompt: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::util_token_counter_params
+    end
+  end
+end

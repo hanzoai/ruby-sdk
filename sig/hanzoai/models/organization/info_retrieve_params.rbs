@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    module Organization
+      type info_retrieve_params =
+        { organization_id: String } & Hanzoai::request_parameters
+
+      class InfoRetrieveParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor organization_id: String
+
+        def initialize: (
+          organization_id: String,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Organization::info_retrieve_params
+      end
+    end
+  end
+end

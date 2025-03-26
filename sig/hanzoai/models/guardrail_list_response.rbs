@@ -1,0 +1,76 @@
+module Hanzoai
+  module Models
+    type guardrail_list_response =
+      { guardrails: ::Array[Hanzoai::Models::GuardrailListResponse::Guardrail] }
+
+    class GuardrailListResponse < Hanzoai::BaseModel
+      attr_accessor guardrails: ::Array[Hanzoai::Models::GuardrailListResponse::Guardrail]
+
+      def initialize: (
+        guardrails: ::Array[Hanzoai::Models::GuardrailListResponse::Guardrail]
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::guardrail_list_response
+
+      type guardrail =
+        {
+          guardrail_info: top?,
+          guardrail_name: String,
+          llm_params: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams
+        }
+
+      class Guardrail < Hanzoai::BaseModel
+        attr_accessor guardrail_info: top?
+
+        attr_accessor guardrail_name: String
+
+        attr_accessor llm_params: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams
+
+        def initialize: (
+          guardrail_info: top?,
+          guardrail_name: String,
+          llm_params: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::GuardrailListResponse::guardrail
+
+        type llm_params =
+          {
+            guardrail: String,
+            mode: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams::mode,
+            default_on: bool
+          }
+
+        class LlmParams < Hanzoai::BaseModel
+          attr_accessor guardrail: String
+
+          attr_accessor mode: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams::mode
+
+          attr_reader default_on: bool?
+
+          def default_on=: (bool) -> bool
+
+          def initialize: (
+            guardrail: String,
+            mode: Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams::mode,
+            ?default_on: bool
+          ) -> void
+
+          def to_hash: -> Hanzoai::Models::GuardrailListResponse::Guardrail::llm_params
+
+          type mode = String | ::Array[String]
+
+          module Mode
+            extend Hanzoai::Union
+
+            type string_array = ::Array[String]
+
+            StringArray: string_array
+
+            def self?.variants: -> [String, ::Array[String]]
+          end
+        end
+      end
+    end
+  end
+end

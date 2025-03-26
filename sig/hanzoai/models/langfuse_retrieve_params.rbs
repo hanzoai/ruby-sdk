@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type langfuse_retrieve_params = {  } & Hanzoai::request_parameters
+
+    class LangfuseRetrieveParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::langfuse_retrieve_params
+    end
+  end
+end

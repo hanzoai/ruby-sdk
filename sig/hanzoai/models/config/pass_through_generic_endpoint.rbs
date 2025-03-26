@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    module Config
+      type pass_through_generic_endpoint =
+        { headers: top, path: String, target: String }
+
+      class PassThroughGenericEndpoint < Hanzoai::BaseModel
+        attr_accessor headers: top
+
+        attr_accessor path: String
+
+        attr_accessor target: String
+
+        def initialize: (headers: top, path: String, target: String) -> void
+
+        def to_hash: -> Hanzoai::Models::Config::pass_through_generic_endpoint
+      end
+    end
+  end
+end

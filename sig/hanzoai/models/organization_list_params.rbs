@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type organization_list_params = {  } & Hanzoai::request_parameters
+
+    class OrganizationListParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::organization_list_params
+    end
+  end
+end

@@ -1,0 +1,56 @@
+module Hanzoai
+  module Models
+    type organization_create_response =
+      {
+        budget_id: String,
+        created_at: Time,
+        created_by: String,
+        models: ::Array[String],
+        organization_id: String,
+        updated_at: Time,
+        updated_by: String,
+        metadata: top?,
+        organization_alias: String?,
+        spend: Float
+      }
+
+    class OrganizationCreateResponse < Hanzoai::BaseModel
+      attr_accessor budget_id: String
+
+      attr_accessor created_at: Time
+
+      attr_accessor created_by: String
+
+      attr_accessor models: ::Array[String]
+
+      attr_accessor organization_id: String
+
+      attr_accessor updated_at: Time
+
+      attr_accessor updated_by: String
+
+      attr_accessor metadata: top?
+
+      attr_accessor organization_alias: String?
+
+      attr_reader spend: Float?
+
+      def spend=: (Float) -> Float
+
+      def initialize: (
+        budget_id: String,
+        created_at: Time,
+        created_by: String,
+        models: ::Array[String],
+        organization_id: String,
+        updated_at: Time,
+        updated_by: String,
+        ?metadata: top?,
+        ?organization_alias: String?,
+        ?spend: Float
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::organization_create_response
+    end
+  end
+end

@@ -1,0 +1,340 @@
+module Hanzoai
+  module Models
+    type organization_delete_response_item =
+      {
+        budget_id: String,
+        created_at: Time,
+        created_by: String,
+        models: ::Array[String],
+        updated_at: Time,
+        updated_by: String,
+        llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::LlmBudgetTable?,
+        members: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Member],
+        metadata: top?,
+        organization_alias: String?,
+        organization_id: String?,
+        spend: Float,
+        teams: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Team]
+      }
+
+    class OrganizationDeleteResponseItem < Hanzoai::BaseModel
+      attr_accessor budget_id: String
+
+      attr_accessor created_at: Time
+
+      attr_accessor created_by: String
+
+      attr_accessor models: ::Array[String]
+
+      attr_accessor updated_at: Time
+
+      attr_accessor updated_by: String
+
+      attr_accessor llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::LlmBudgetTable?
+
+      attr_reader members: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Member]?
+
+      def members=: (
+        ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Member]
+      ) -> ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Member]
+
+      attr_accessor metadata: top?
+
+      attr_accessor organization_alias: String?
+
+      attr_accessor organization_id: String?
+
+      attr_reader spend: Float?
+
+      def spend=: (Float) -> Float
+
+      attr_reader teams: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Team]?
+
+      def teams=: (
+        ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Team]
+      ) -> ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Team]
+
+      def initialize: (
+        budget_id: String,
+        created_at: Time,
+        created_by: String,
+        models: ::Array[String],
+        updated_at: Time,
+        updated_by: String,
+        ?llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::LlmBudgetTable?,
+        ?members: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Member],
+        ?metadata: top?,
+        ?organization_alias: String?,
+        ?organization_id: String?,
+        ?spend: Float,
+        ?teams: ::Array[Hanzoai::Models::OrganizationDeleteResponseItem::Team]
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::organization_delete_response_item
+
+      type llm_budget_table =
+        {
+          budget_duration: String?,
+          max_budget: Float?,
+          max_parallel_requests: Integer?,
+          model_max_budget: top?,
+          rpm_limit: Integer?,
+          soft_budget: Float?,
+          tpm_limit: Integer?
+        }
+
+      class LlmBudgetTable < Hanzoai::BaseModel
+        attr_accessor budget_duration: String?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor max_parallel_requests: Integer?
+
+        attr_accessor model_max_budget: top?
+
+        attr_accessor rpm_limit: Integer?
+
+        attr_accessor soft_budget: Float?
+
+        attr_accessor tpm_limit: Integer?
+
+        def initialize: (
+          ?budget_duration: String?,
+          ?max_budget: Float?,
+          ?max_parallel_requests: Integer?,
+          ?model_max_budget: top?,
+          ?rpm_limit: Integer?,
+          ?soft_budget: Float?,
+          ?tpm_limit: Integer?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::OrganizationDeleteResponseItem::llm_budget_table
+      end
+
+      type member =
+        {
+          created_at: Time,
+          organization_id: String,
+          updated_at: Time,
+          user_id: String,
+          budget_id: String?,
+          llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::Member::LlmBudgetTable?,
+          spend: Float,
+          user: top,
+          user_role: String?
+        }
+
+      class Member < Hanzoai::BaseModel
+        attr_accessor created_at: Time
+
+        attr_accessor organization_id: String
+
+        attr_accessor updated_at: Time
+
+        attr_accessor user_id: String
+
+        attr_accessor budget_id: String?
+
+        attr_accessor llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::Member::LlmBudgetTable?
+
+        attr_reader spend: Float?
+
+        def spend=: (Float) -> Float
+
+        attr_reader user: top?
+
+        def user=: (top) -> top
+
+        attr_accessor user_role: String?
+
+        def initialize: (
+          created_at: Time,
+          organization_id: String,
+          updated_at: Time,
+          user_id: String,
+          ?budget_id: String?,
+          ?llm_budget_table: Hanzoai::Models::OrganizationDeleteResponseItem::Member::LlmBudgetTable?,
+          ?spend: Float,
+          ?user: top,
+          ?user_role: String?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::OrganizationDeleteResponseItem::member
+
+        type llm_budget_table =
+          {
+            budget_duration: String?,
+            max_budget: Float?,
+            max_parallel_requests: Integer?,
+            model_max_budget: top?,
+            rpm_limit: Integer?,
+            soft_budget: Float?,
+            tpm_limit: Integer?
+          }
+
+        class LlmBudgetTable < Hanzoai::BaseModel
+          attr_accessor budget_duration: String?
+
+          attr_accessor max_budget: Float?
+
+          attr_accessor max_parallel_requests: Integer?
+
+          attr_accessor model_max_budget: top?
+
+          attr_accessor rpm_limit: Integer?
+
+          attr_accessor soft_budget: Float?
+
+          attr_accessor tpm_limit: Integer?
+
+          def initialize: (
+            ?budget_duration: String?,
+            ?max_budget: Float?,
+            ?max_parallel_requests: Integer?,
+            ?model_max_budget: top?,
+            ?rpm_limit: Integer?,
+            ?soft_budget: Float?,
+            ?tpm_limit: Integer?
+          ) -> void
+
+          def to_hash: -> Hanzoai::Models::OrganizationDeleteResponseItem::Member::llm_budget_table
+        end
+      end
+
+      type team =
+        {
+          team_id: String,
+          admins: ::Array[top],
+          blocked: bool,
+          budget_duration: String?,
+          budget_reset_at: Time?,
+          created_at: Time?,
+          llm_model_table: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable?,
+          max_budget: Float?,
+          max_parallel_requests: Integer?,
+          members: ::Array[top],
+          members_with_roles: ::Array[Hanzoai::Models::Member],
+          metadata: top?,
+          model_id: Integer?,
+          models: ::Array[top],
+          organization_id: String?,
+          rpm_limit: Integer?,
+          spend: Float?,
+          team_alias: String?,
+          tpm_limit: Integer?
+        }
+
+      class Team < Hanzoai::BaseModel
+        attr_accessor team_id: String
+
+        attr_reader admins: ::Array[top]?
+
+        def admins=: (::Array[top]) -> ::Array[top]
+
+        attr_reader blocked: bool?
+
+        def blocked=: (bool) -> bool
+
+        attr_accessor budget_duration: String?
+
+        attr_accessor budget_reset_at: Time?
+
+        attr_accessor created_at: Time?
+
+        attr_accessor llm_model_table: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor max_parallel_requests: Integer?
+
+        attr_reader members: ::Array[top]?
+
+        def members=: (::Array[top]) -> ::Array[top]
+
+        attr_reader members_with_roles: ::Array[Hanzoai::Models::Member]?
+
+        def members_with_roles=: (
+          ::Array[Hanzoai::Models::Member]
+        ) -> ::Array[Hanzoai::Models::Member]
+
+        attr_accessor metadata: top?
+
+        attr_accessor model_id: Integer?
+
+        attr_reader models: ::Array[top]?
+
+        def models=: (::Array[top]) -> ::Array[top]
+
+        attr_accessor organization_id: String?
+
+        attr_accessor rpm_limit: Integer?
+
+        attr_accessor spend: Float?
+
+        attr_accessor team_alias: String?
+
+        attr_accessor tpm_limit: Integer?
+
+        def initialize: (
+          team_id: String,
+          ?admins: ::Array[top],
+          ?blocked: bool,
+          ?budget_duration: String?,
+          ?budget_reset_at: Time?,
+          ?created_at: Time?,
+          ?llm_model_table: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable?,
+          ?max_budget: Float?,
+          ?max_parallel_requests: Integer?,
+          ?members: ::Array[top],
+          ?members_with_roles: ::Array[Hanzoai::Models::Member],
+          ?metadata: top?,
+          ?model_id: Integer?,
+          ?models: ::Array[top],
+          ?organization_id: String?,
+          ?rpm_limit: Integer?,
+          ?spend: Float?,
+          ?team_alias: String?,
+          ?tpm_limit: Integer?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::OrganizationDeleteResponseItem::team
+
+        type llm_model_table =
+          {
+            created_by: String,
+            updated_by: String,
+            model_aliases: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable::model_aliases?
+          }
+
+        class LlmModelTable < Hanzoai::BaseModel
+          attr_accessor created_by: String
+
+          attr_accessor updated_by: String
+
+          attr_accessor model_aliases: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable::model_aliases?
+
+          def initialize: (
+            created_by: String,
+            updated_by: String,
+            ?model_aliases: Hanzoai::Models::OrganizationDeleteResponseItem::Team::LlmModelTable::model_aliases?
+          ) -> void
+
+          def to_hash: -> Hanzoai::Models::OrganizationDeleteResponseItem::Team::llm_model_table
+
+          type model_aliases = top | String
+
+          module ModelAliases
+            extend Hanzoai::Union
+
+            def self?.variants: -> [top, String]
+          end
+        end
+      end
+    end
+
+    type organization_delete_response =
+      ::Array[Hanzoai::Models::OrganizationDeleteResponseItem]
+
+    OrganizationDeleteResponse: organization_delete_response
+  end
+end

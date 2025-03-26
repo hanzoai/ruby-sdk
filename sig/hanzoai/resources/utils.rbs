@@ -1,0 +1,25 @@
+module Hanzoai
+  module Resources
+    class Utils
+      def get_supported_openai_params: (
+        model: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def token_counter: (
+        model: String,
+        ?messages: ::Array[top]?,
+        ?prompt: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::UtilTokenCounterResponse
+
+      def transform_request: (
+        call_type: Hanzoai::Models::UtilTransformRequestParams::call_type,
+        request_body: top,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::UtilTransformRequestResponse
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

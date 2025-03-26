@@ -1,0 +1,61 @@
+module Hanzoai
+  module Models
+    module Global
+      type spend_retrieve_report_params =
+        {
+          api_key: String?,
+          customer_id: String?,
+          end_date: String?,
+          group_by: Hanzoai::Models::Global::SpendRetrieveReportParams::group_by?,
+          internal_user_id: String?,
+          start_date: String?,
+          team_id: String?
+        }
+        & Hanzoai::request_parameters
+
+      class SpendRetrieveReportParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor api_key: String?
+
+        attr_accessor customer_id: String?
+
+        attr_accessor end_date: String?
+
+        attr_accessor group_by: Hanzoai::Models::Global::SpendRetrieveReportParams::group_by?
+
+        attr_accessor internal_user_id: String?
+
+        attr_accessor start_date: String?
+
+        attr_accessor team_id: String?
+
+        def initialize: (
+          ?api_key: String?,
+          ?customer_id: String?,
+          ?end_date: String?,
+          ?group_by: Hanzoai::Models::Global::SpendRetrieveReportParams::group_by?,
+          ?internal_user_id: String?,
+          ?start_date: String?,
+          ?team_id: String?,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Global::spend_retrieve_report_params
+
+        type group_by = :team | :customer | :api_key
+
+        module GroupBy
+          extend Hanzoai::Enum
+
+          TEAM: :team
+          CUSTOMER: :customer
+          API_KEY: :api_key
+
+          def self?.values: -> ::Array[Hanzoai::Models::Global::SpendRetrieveReportParams::group_by]
+        end
+      end
+    end
+  end
+end

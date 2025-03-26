@@ -1,0 +1,30 @@
+module Hanzoai
+  module Models
+    type util_transform_request_response =
+      {
+        error: String?,
+        raw_request_api_base: String?,
+        raw_request_body: top?,
+        raw_request_headers: top?
+      }
+
+    class UtilTransformRequestResponse < Hanzoai::BaseModel
+      attr_accessor error: String?
+
+      attr_accessor raw_request_api_base: String?
+
+      attr_accessor raw_request_body: top?
+
+      attr_accessor raw_request_headers: top?
+
+      def initialize: (
+        ?error: String?,
+        ?raw_request_api_base: String?,
+        ?raw_request_body: top?,
+        ?raw_request_headers: top?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::util_transform_request_response
+    end
+  end
+end

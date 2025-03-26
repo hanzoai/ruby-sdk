@@ -1,0 +1,49 @@
+module Hanzoai
+  module Models
+    type provider_list_budgets_response =
+      {
+        providers: ::Hash[Symbol, Hanzoai::Models::ProviderListBudgetsResponse::Provider]
+      }
+
+    class ProviderListBudgetsResponse < Hanzoai::BaseModel
+      attr_reader providers: ::Hash[Symbol, Hanzoai::Models::ProviderListBudgetsResponse::Provider]?
+
+      def providers=: (
+        ::Hash[Symbol, Hanzoai::Models::ProviderListBudgetsResponse::Provider]
+      ) -> ::Hash[Symbol, Hanzoai::Models::ProviderListBudgetsResponse::Provider]
+
+      def initialize: (
+        ?providers: ::Hash[Symbol, Hanzoai::Models::ProviderListBudgetsResponse::Provider]
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::provider_list_budgets_response
+
+      type provider =
+        {
+          budget_limit: Float?,
+          time_period: String?,
+          budget_reset_at: String?,
+          spend: Float?
+        }
+
+      class Provider < Hanzoai::BaseModel
+        attr_accessor budget_limit: Float?
+
+        attr_accessor time_period: String?
+
+        attr_accessor budget_reset_at: String?
+
+        attr_accessor spend: Float?
+
+        def initialize: (
+          budget_limit: Float?,
+          time_period: String?,
+          ?budget_reset_at: String?,
+          ?spend: Float?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::ProviderListBudgetsResponse::provider
+      end
+    end
+  end
+end

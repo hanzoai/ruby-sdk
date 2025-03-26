@@ -1,0 +1,11 @@
+module Hanzoai
+  module Resources
+    class Guardrails
+      def list: (
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::GuardrailListResponse
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

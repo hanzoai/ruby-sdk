@@ -1,0 +1,37 @@
+module Hanzoai
+  module Models
+    type member =
+      {
+        role: Hanzoai::Models::Member::role,
+        user_email: String?,
+        user_id: String?
+      }
+
+    class Member < Hanzoai::BaseModel
+      attr_accessor role: Hanzoai::Models::Member::role
+
+      attr_accessor user_email: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        role: Hanzoai::Models::Member::role,
+        ?user_email: String?,
+        ?user_id: String?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::member
+
+      type role = :admin | :user
+
+      module Role
+        extend Hanzoai::Enum
+
+        ADMIN: :admin
+        USER: :user
+
+        def self?.values: -> ::Array[Hanzoai::Models::Member::role]
+      end
+    end
+  end
+end

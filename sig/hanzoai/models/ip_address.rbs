@@ -1,0 +1,13 @@
+module Hanzoai
+  module Models
+    type ip_address = { ip: String }
+
+    class IPAddress < Hanzoai::BaseModel
+      attr_accessor ip: String
+
+      def initialize: (ip: String) -> void
+
+      def to_hash: -> Hanzoai::Models::ip_address
+    end
+  end
+end
