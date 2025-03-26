@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type batch_create_with_provider_params = {  } & Hanzoai::request_parameters
+
+    class BatchCreateWithProviderParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::batch_create_with_provider_params
+    end
+  end
+end

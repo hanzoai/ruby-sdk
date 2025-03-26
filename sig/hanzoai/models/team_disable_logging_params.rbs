@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type team_disable_logging_params = {  } & Hanzoai::request_parameters
+
+    class TeamDisableLoggingParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::team_disable_logging_params
+    end
+  end
+end

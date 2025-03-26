@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type customer_retrieve_info_params =
+      { end_user_id: String } & Hanzoai::request_parameters
+
+    class CustomerRetrieveInfoParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor end_user_id: String
+
+      def initialize: (
+        end_user_id: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::customer_retrieve_info_params
+    end
+  end
+end

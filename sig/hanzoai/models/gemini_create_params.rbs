@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type gemini_create_params = {  } & Hanzoai::request_parameters
+
+    class GeminiCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::gemini_create_params
+    end
+  end
+end

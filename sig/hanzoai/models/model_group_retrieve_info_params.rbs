@@ -1,0 +1,20 @@
+module Hanzoai
+  module Models
+    type model_group_retrieve_info_params =
+      { model_group: String? } & Hanzoai::request_parameters
+
+    class ModelGroupRetrieveInfoParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor model_group: String?
+
+      def initialize: (
+        ?model_group: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::model_group_retrieve_info_params
+    end
+  end
+end

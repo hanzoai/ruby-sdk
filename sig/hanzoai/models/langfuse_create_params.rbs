@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type langfuse_create_params = {  } & Hanzoai::request_parameters
+
+    class LangfuseCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::langfuse_create_params
+    end
+  end
+end

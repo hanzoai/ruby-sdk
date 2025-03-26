@@ -1,0 +1,133 @@
+module Hanzoai
+  module Models
+    type key_generate_params =
+      {
+        aliases: top?,
+        allowed_cache_controls: ::Array[top]?,
+        blocked: bool?,
+        budget_duration: String?,
+        budget_id: String?,
+        config: top?,
+        duration: String?,
+        enforced_params: ::Array[String]?,
+        guardrails: ::Array[String]?,
+        key: String?,
+        key_alias: String?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        metadata: top?,
+        model_max_budget: top?,
+        model_rpm_limit: top?,
+        model_tpm_limit: top?,
+        models: ::Array[top]?,
+        permissions: top?,
+        rpm_limit: Integer?,
+        send_invite_email: bool?,
+        soft_budget: Float?,
+        spend: Float?,
+        tags: ::Array[String]?,
+        team_id: String?,
+        tpm_limit: Integer?,
+        user_id: String?,
+        llm_changed_by: String
+      }
+      & Hanzoai::request_parameters
+
+    class KeyGenerateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor aliases: top?
+
+      attr_accessor allowed_cache_controls: ::Array[top]?
+
+      attr_accessor blocked: bool?
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_id: String?
+
+      attr_accessor config: top?
+
+      attr_accessor duration: String?
+
+      attr_accessor enforced_params: ::Array[String]?
+
+      attr_accessor guardrails: ::Array[String]?
+
+      attr_accessor key: String?
+
+      attr_accessor key_alias: String?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_accessor metadata: top?
+
+      attr_accessor model_max_budget: top?
+
+      attr_accessor model_rpm_limit: top?
+
+      attr_accessor model_tpm_limit: top?
+
+      attr_accessor models: ::Array[top]?
+
+      attr_accessor permissions: top?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor send_invite_email: bool?
+
+      attr_accessor soft_budget: Float?
+
+      attr_accessor spend: Float?
+
+      attr_accessor tags: ::Array[String]?
+
+      attr_accessor team_id: String?
+
+      attr_accessor tpm_limit: Integer?
+
+      attr_accessor user_id: String?
+
+      attr_reader llm_changed_by: String?
+
+      def llm_changed_by=: (String) -> String
+
+      def initialize: (
+        ?aliases: top?,
+        ?allowed_cache_controls: ::Array[top]?,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?config: top?,
+        ?duration: String?,
+        ?enforced_params: ::Array[String]?,
+        ?guardrails: ::Array[String]?,
+        ?key: String?,
+        ?key_alias: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top?,
+        ?model_max_budget: top?,
+        ?model_rpm_limit: top?,
+        ?model_tpm_limit: top?,
+        ?models: ::Array[top]?,
+        ?permissions: top?,
+        ?rpm_limit: Integer?,
+        ?send_invite_email: bool?,
+        ?soft_budget: Float?,
+        ?spend: Float?,
+        ?tags: ::Array[String]?,
+        ?team_id: String?,
+        ?tpm_limit: Integer?,
+        ?user_id: String?,
+        ?llm_changed_by: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::key_generate_params
+    end
+  end
+end

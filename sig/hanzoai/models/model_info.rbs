@@ -1,0 +1,67 @@
+module Hanzoai
+  module Models
+    type model_info =
+      {
+        id: String?,
+        base_model: String?,
+        created_at: Time?,
+        created_by: String?,
+        db_model: bool,
+        team_id: String?,
+        team_public_model_name: String?,
+        tier: Hanzoai::Models::ModelInfo::tier?,
+        updated_at: Time?,
+        updated_by: String?
+      }
+
+    class ModelInfo < Hanzoai::BaseModel
+      attr_accessor id: String?
+
+      attr_accessor base_model: String?
+
+      attr_accessor created_at: Time?
+
+      attr_accessor created_by: String?
+
+      attr_reader db_model: bool?
+
+      def db_model=: (bool) -> bool
+
+      attr_accessor team_id: String?
+
+      attr_accessor team_public_model_name: String?
+
+      attr_accessor tier: Hanzoai::Models::ModelInfo::tier?
+
+      attr_accessor updated_at: Time?
+
+      attr_accessor updated_by: String?
+
+      def initialize: (
+        id: String?,
+        ?base_model: String?,
+        ?created_at: Time?,
+        ?created_by: String?,
+        ?db_model: bool,
+        ?team_id: String?,
+        ?team_public_model_name: String?,
+        ?tier: Hanzoai::Models::ModelInfo::tier?,
+        ?updated_at: Time?,
+        ?updated_by: String?
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::model_info
+
+      type tier = :free | :paid
+
+      module Tier
+        extend Hanzoai::Enum
+
+        FREE: :free
+        PAID: :paid
+
+        def self?.values: -> ::Array[Hanzoai::Models::ModelInfo::tier]
+      end
+    end
+  end
+end

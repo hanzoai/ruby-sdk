@@ -1,0 +1,34 @@
+module Hanzoai
+  module Models
+    type user_list_params =
+      { page: Integer, page_size: Integer, role: String?, user_ids: String? }
+      & Hanzoai::request_parameters
+
+    class UserListParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader page_size: Integer?
+
+      def page_size=: (Integer) -> Integer
+
+      attr_accessor role: String?
+
+      attr_accessor user_ids: String?
+
+      def initialize: (
+        ?page: Integer,
+        ?page_size: Integer,
+        ?role: String?,
+        ?user_ids: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::user_list_params
+    end
+  end
+end

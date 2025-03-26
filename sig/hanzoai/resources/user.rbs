@@ -1,0 +1,85 @@
+module Hanzoai
+  module Resources
+    class User
+      def create: (
+        ?aliases: top?,
+        ?allowed_cache_controls: ::Array[top]?,
+        ?auto_create_key: bool,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?config: top?,
+        ?duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?key_alias: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top?,
+        ?model_max_budget: top?,
+        ?model_rpm_limit: top?,
+        ?model_tpm_limit: top?,
+        ?models: ::Array[top]?,
+        ?permissions: top?,
+        ?rpm_limit: Integer?,
+        ?send_invite_email: bool?,
+        ?spend: Float?,
+        ?team_id: String?,
+        ?teams: ::Array[top]?,
+        ?tpm_limit: Integer?,
+        ?user_alias: String?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?user_role: Hanzoai::Models::UserCreateParams::user_role?,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::UserCreateResponse
+
+      def update: (
+        ?aliases: top?,
+        ?allowed_cache_controls: ::Array[top]?,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?config: top?,
+        ?duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?key_alias: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top?,
+        ?model_max_budget: top?,
+        ?model_rpm_limit: top?,
+        ?model_tpm_limit: top?,
+        ?models: ::Array[top]?,
+        ?password: String?,
+        ?permissions: top?,
+        ?rpm_limit: Integer?,
+        ?spend: Float?,
+        ?team_id: String?,
+        ?tpm_limit: Integer?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?user_role: Hanzoai::Models::UserUpdateParams::user_role?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def list: (
+        ?page: Integer,
+        ?page_size: Integer,
+        ?role: String?,
+        ?user_ids: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def delete: (
+        user_ids: ::Array[String],
+        ?llm_changed_by: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def retrieve_info: (
+        ?user_id: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

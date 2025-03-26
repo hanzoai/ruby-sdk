@@ -1,0 +1,29 @@
+module Hanzoai
+  module Models
+    type file_create_params =
+      { file: (IO | StringIO), purpose: String, custom_llm_provider: String }
+      & Hanzoai::request_parameters
+
+    class FileCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor file: IO | StringIO
+
+      attr_accessor purpose: String
+
+      attr_reader custom_llm_provider: String?
+
+      def custom_llm_provider=: (String) -> String
+
+      def initialize: (
+        file: IO | StringIO,
+        purpose: String,
+        ?custom_llm_provider: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::file_create_params
+    end
+  end
+end

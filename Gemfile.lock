@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    Hanzo-AI (0.0.1.pre.alpha.0)
+    hanzoai (0.0.1.pre.alpha.0)
       connection_pool
 
 GEM
@@ -168,8 +168,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  Hanzo-AI!
   async
+  hanzoai!
   minitest
   minitest-focus
   minitest-hooks

@@ -1,0 +1,16 @@
+module Hanzoai
+  module Models
+    module Audio
+      type speech_create_params = {  } & Hanzoai::request_parameters
+
+      class SpeechCreateParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::Audio::speech_create_params
+      end
+    end
+  end
+end

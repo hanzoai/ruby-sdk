@@ -1,0 +1,122 @@
+module Hanzoai
+  class Client < Hanzoai::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    attr_reader api_key: String
+
+    attr_reader models: Hanzoai::Resources::Models
+
+    attr_reader openai: Hanzoai::Resources::OpenAI
+
+    attr_reader engines: Hanzoai::Resources::Engines
+
+    attr_reader chat: Hanzoai::Resources::Chat
+
+    attr_reader completions: Hanzoai::Resources::Completions
+
+    attr_reader embeddings: Hanzoai::Resources::Embeddings
+
+    attr_reader images: Hanzoai::Resources::Images
+
+    attr_reader audio: Hanzoai::Resources::Audio
+
+    attr_reader assistants: Hanzoai::Resources::Assistants
+
+    attr_reader threads: Hanzoai::Resources::Threads
+
+    attr_reader moderations: Hanzoai::Resources::Moderations
+
+    attr_reader utils: Hanzoai::Resources::Utils
+
+    attr_reader model: Hanzoai::Resources::Model
+
+    attr_reader model_group: Hanzoai::Resources::ModelGroup
+
+    attr_reader routes: Hanzoai::Resources::Routes
+
+    attr_reader responses: Hanzoai::Resources::Responses
+
+    attr_reader batches: Hanzoai::Resources::Batches
+
+    attr_reader rerank: Hanzoai::Resources::Rerank
+
+    attr_reader fine_tuning: Hanzoai::Resources::FineTuning
+
+    attr_reader credentials: Hanzoai::Resources::Credentials
+
+    attr_reader vertex_ai: Hanzoai::Resources::VertexAI
+
+    attr_reader gemini: Hanzoai::Resources::Gemini
+
+    attr_reader cohere: Hanzoai::Resources::Cohere
+
+    attr_reader anthropic: Hanzoai::Resources::Anthropic
+
+    attr_reader bedrock: Hanzoai::Resources::Bedrock
+
+    attr_reader eu_assemblyai: Hanzoai::Resources::EuAssemblyai
+
+    attr_reader assemblyai: Hanzoai::Resources::Assemblyai
+
+    attr_reader azure: Hanzoai::Resources::Azure
+
+    attr_reader langfuse: Hanzoai::Resources::Langfuse
+
+    attr_reader config: Hanzoai::Resources::Config
+
+    attr_reader test: Hanzoai::Resources::Test
+
+    attr_reader health: Hanzoai::Resources::Health
+
+    attr_reader active: Hanzoai::Resources::Active
+
+    attr_reader settings: Hanzoai::Resources::Settings
+
+    attr_reader key: Hanzoai::Resources::Key
+
+    attr_reader user: Hanzoai::Resources::User
+
+    attr_reader team: Hanzoai::Resources::Team
+
+    attr_reader organization: Hanzoai::Resources::Organization
+
+    attr_reader customer: Hanzoai::Resources::Customer
+
+    attr_reader spend: Hanzoai::Resources::Spend
+
+    attr_reader global: Hanzoai::Resources::Global
+
+    attr_reader provider: Hanzoai::Resources::Provider
+
+    attr_reader cache: Hanzoai::Resources::Cache
+
+    attr_reader guardrails: Hanzoai::Resources::Guardrails
+
+    attr_reader add: Hanzoai::Resources::Add
+
+    attr_reader delete: Hanzoai::Resources::Delete
+
+    attr_reader files: Hanzoai::Resources::Files
+
+    attr_reader budget: Hanzoai::Resources::Budget
+
+    def get_home: (?request_options: Hanzoai::request_opts) -> top
+
+    private def auth_headers: -> ::Hash[String, String]
+
+    def initialize: (
+      ?base_url: String?,
+      ?api_key: String?,
+      ?max_retries: Integer,
+      ?timeout: Float,
+      ?initial_retry_delay: Float,
+      ?max_retry_delay: Float
+    ) -> void
+  end
+end

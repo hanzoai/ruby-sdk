@@ -1,0 +1,19 @@
+module Hanzoai
+  module Models
+    type file_list_params = { purpose: String? } & Hanzoai::request_parameters
+
+    class FileListParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor purpose: String?
+
+      def initialize: (
+        ?purpose: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::file_list_params
+    end
+  end
+end

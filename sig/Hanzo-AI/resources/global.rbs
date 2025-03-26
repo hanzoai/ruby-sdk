@@ -1,9 +1,0 @@
-module HanzoAI
-  module Resources
-    class Global
-      attr_reader spend: HanzoAI::Resources::Global::Spend
-
-      def initialize: (client: HanzoAI::Client) -> void
-    end
-  end
-end

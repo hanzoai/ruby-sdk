@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    type key_unblock_params =
+      { llm_changed_by: String } & Hanzoai::request_parameters
+
+    class KeyUnblockParams < Hanzoai::Models::BlockKeyRequest
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def llm_changed_by: -> String?
+
+      def llm_changed_by=: (String _) -> String
+
+      def initialize: (
+        ?llm_changed_by: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::key_unblock_params
+    end
+  end
+end

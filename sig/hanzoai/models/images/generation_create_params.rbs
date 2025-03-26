@@ -1,0 +1,16 @@
+module Hanzoai
+  module Models
+    module Images
+      type generation_create_params = {  } & Hanzoai::request_parameters
+
+      class GenerationCreateParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::Images::generation_create_params
+      end
+    end
+  end
+end

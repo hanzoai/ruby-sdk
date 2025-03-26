@@ -1,0 +1,27 @@
+module Hanzoai
+  module Models
+    type spend_calculate_spend_params =
+      { completion_response: top?, messages: ::Array[top]?, model: String? }
+      & Hanzoai::request_parameters
+
+    class SpendCalculateSpendParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor completion_response: top?
+
+      attr_accessor messages: ::Array[top]?
+
+      attr_accessor model: String?
+
+      def initialize: (
+        ?completion_response: top?,
+        ?messages: ::Array[top]?,
+        ?model: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::spend_calculate_spend_params
+    end
+  end
+end

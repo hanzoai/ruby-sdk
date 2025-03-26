@@ -1,0 +1,23 @@
+module Hanzoai
+  module Models
+    type spend_list_tags_params =
+      { end_date: String?, start_date: String? } & Hanzoai::request_parameters
+
+    class SpendListTagsParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor end_date: String?
+
+      attr_accessor start_date: String?
+
+      def initialize: (
+        ?end_date: String?,
+        ?start_date: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::spend_list_tags_params
+    end
+  end
+end

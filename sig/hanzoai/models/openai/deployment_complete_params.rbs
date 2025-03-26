@@ -1,0 +1,16 @@
+module Hanzoai
+  module Models
+    module OpenAI
+      type deployment_complete_params = {  } & Hanzoai::request_parameters
+
+      class DeploymentCompleteParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::OpenAI::deployment_complete_params
+      end
+    end
+  end
+end

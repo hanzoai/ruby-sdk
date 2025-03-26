@@ -1,0 +1,21 @@
+module Hanzoai
+  module Resources
+    class OpenAI
+      class Deployments
+        attr_reader chat: Hanzoai::Resources::OpenAI::Deployments::Chat
+
+        def complete: (
+          String model,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def embed: (
+          String model,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

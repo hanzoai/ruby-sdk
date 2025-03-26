@@ -1,0 +1,51 @@
+module Hanzoai
+  module Models
+    module Team
+      type callback_add_params =
+        {
+          callback_name: String,
+          callback_vars: ::Hash[Symbol, String],
+          callback_type: Hanzoai::Models::Team::CallbackAddParams::callback_type?,
+          llm_changed_by: String
+        }
+        & Hanzoai::request_parameters
+
+      class CallbackAddParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor callback_name: String
+
+        attr_accessor callback_vars: ::Hash[Symbol, String]
+
+        attr_accessor callback_type: Hanzoai::Models::Team::CallbackAddParams::callback_type?
+
+        attr_reader llm_changed_by: String?
+
+        def llm_changed_by=: (String) -> String
+
+        def initialize: (
+          callback_name: String,
+          callback_vars: ::Hash[Symbol, String],
+          ?callback_type: Hanzoai::Models::Team::CallbackAddParams::callback_type?,
+          ?llm_changed_by: String,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Team::callback_add_params
+
+        type callback_type = :success | :failure | :success_and_failure
+
+        module CallbackType
+          extend Hanzoai::Enum
+
+          SUCCESS: :success
+          FAILURE: :failure
+          SUCCESS_AND_FAILURE: :success_and_failure
+
+          def self?.values: -> ::Array[Hanzoai::Models::Team::CallbackAddParams::callback_type]
+        end
+      end
+    end
+  end
+end

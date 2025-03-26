@@ -1,0 +1,29 @@
+module Hanzoai
+  module Resources
+    class Spend
+      def calculate_spend: (
+        ?completion_response: top?,
+        ?messages: ::Array[top]?,
+        ?model: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def list_logs: (
+        ?api_key: String?,
+        ?end_date: String?,
+        ?request_id: String?,
+        ?start_date: String?,
+        ?user_id: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::spend_list_logs_response
+
+      def list_tags: (
+        ?end_date: String?,
+        ?start_date: String?,
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::spend_list_tags_response
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

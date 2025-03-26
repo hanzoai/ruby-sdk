@@ -1,0 +1,23 @@
+module Hanzoai
+  module Resources
+    class Team
+      class Callback
+        def retrieve: (
+          String team_id,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def add: (
+          String team_id,
+          callback_name: String,
+          callback_vars: ::Hash[Symbol, String],
+          ?callback_type: Hanzoai::Models::Team::CallbackAddParams::callback_type?,
+          ?llm_changed_by: String,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

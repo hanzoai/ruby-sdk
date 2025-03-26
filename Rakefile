@@ -87,9 +87,9 @@ multitask(typecheck: [:steep, :sorbet])
 multitask(lint: [:rubocop, :typecheck])
 
 multitask(:build) do
-  sh(*%w[gem build -- Hanzo-AI.gemspec])
+  sh(*%w[gem build -- hanzoai.gemspec])
 end
 
 multitask(release: [:build]) do
-  sh(*%w[gem push], *FileList["Hanzo-AI-*.gem"])
+  sh(*%w[gem push], *FileList["hanzoai-*.gem"])
 end

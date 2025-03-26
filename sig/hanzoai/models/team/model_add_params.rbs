@@ -1,0 +1,26 @@
+module Hanzoai
+  module Models
+    module Team
+      type model_add_params =
+        { models: ::Array[String], team_id: String }
+        & Hanzoai::request_parameters
+
+      class ModelAddParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor models: ::Array[String]
+
+        attr_accessor team_id: String
+
+        def initialize: (
+          models: ::Array[String],
+          team_id: String,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Team::model_add_params
+      end
+    end
+  end
+end

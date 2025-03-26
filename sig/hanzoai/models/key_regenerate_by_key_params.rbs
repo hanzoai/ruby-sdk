@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    type key_regenerate_by_key_params =
+      { llm_changed_by: String } & Hanzoai::request_parameters
+
+    class KeyRegenerateByKeyParams < Hanzoai::Models::Key::RegenerateKeyRequest
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def llm_changed_by: -> String?
+
+      def llm_changed_by=: (String _) -> String
+
+      def initialize: (
+        ?llm_changed_by: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::key_regenerate_by_key_params
+    end
+  end
+end

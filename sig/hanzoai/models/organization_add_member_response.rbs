@@ -1,0 +1,287 @@
+module Hanzoai
+  module Models
+    type organization_add_member_response =
+      {
+        organization_id: String,
+        updated_organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership],
+        updated_users: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser]
+      }
+
+    class OrganizationAddMemberResponse < Hanzoai::BaseModel
+      attr_accessor organization_id: String
+
+      attr_accessor updated_organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership]
+
+      attr_accessor updated_users: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser]
+
+      def initialize: (
+        organization_id: String,
+        updated_organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership],
+        updated_users: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser]
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::organization_add_member_response
+
+      type updated_organization_membership =
+        {
+          created_at: Time,
+          organization_id: String,
+          updated_at: Time,
+          user_id: String,
+          budget_id: String?,
+          llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership::LlmBudgetTable?,
+          spend: Float,
+          user: top,
+          user_role: String?
+        }
+
+      class UpdatedOrganizationMembership < Hanzoai::BaseModel
+        attr_accessor created_at: Time
+
+        attr_accessor organization_id: String
+
+        attr_accessor updated_at: Time
+
+        attr_accessor user_id: String
+
+        attr_accessor budget_id: String?
+
+        attr_accessor llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership::LlmBudgetTable?
+
+        attr_reader spend: Float?
+
+        def spend=: (Float) -> Float
+
+        attr_reader user: top?
+
+        def user=: (top) -> top
+
+        attr_accessor user_role: String?
+
+        def initialize: (
+          created_at: Time,
+          organization_id: String,
+          updated_at: Time,
+          user_id: String,
+          ?budget_id: String?,
+          ?llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership::LlmBudgetTable?,
+          ?spend: Float,
+          ?user: top,
+          ?user_role: String?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::OrganizationAddMemberResponse::updated_organization_membership
+
+        type llm_budget_table =
+          {
+            budget_duration: String?,
+            max_budget: Float?,
+            max_parallel_requests: Integer?,
+            model_max_budget: top?,
+            rpm_limit: Integer?,
+            soft_budget: Float?,
+            tpm_limit: Integer?
+          }
+
+        class LlmBudgetTable < Hanzoai::BaseModel
+          attr_accessor budget_duration: String?
+
+          attr_accessor max_budget: Float?
+
+          attr_accessor max_parallel_requests: Integer?
+
+          attr_accessor model_max_budget: top?
+
+          attr_accessor rpm_limit: Integer?
+
+          attr_accessor soft_budget: Float?
+
+          attr_accessor tpm_limit: Integer?
+
+          def initialize: (
+            ?budget_duration: String?,
+            ?max_budget: Float?,
+            ?max_parallel_requests: Integer?,
+            ?model_max_budget: top?,
+            ?rpm_limit: Integer?,
+            ?soft_budget: Float?,
+            ?tpm_limit: Integer?
+          ) -> void
+
+          def to_hash: -> Hanzoai::Models::OrganizationAddMemberResponse::UpdatedOrganizationMembership::llm_budget_table
+        end
+      end
+
+      type updated_user =
+        {
+          user_id: String,
+          budget_duration: String?,
+          budget_reset_at: Time?,
+          max_budget: Float?,
+          metadata: top?,
+          model_max_budget: top?,
+          model_spend: top?,
+          models: ::Array[top],
+          organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership]?,
+          rpm_limit: Integer?,
+          spend: Float,
+          sso_user_id: String?,
+          teams: ::Array[String],
+          tpm_limit: Integer?,
+          user_email: String?,
+          user_role: String?
+        }
+
+      class UpdatedUser < Hanzoai::BaseModel
+        attr_accessor user_id: String
+
+        attr_accessor budget_duration: String?
+
+        attr_accessor budget_reset_at: Time?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor metadata: top?
+
+        attr_accessor model_max_budget: top?
+
+        attr_accessor model_spend: top?
+
+        attr_reader models: ::Array[top]?
+
+        def models=: (::Array[top]) -> ::Array[top]
+
+        attr_accessor organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership]?
+
+        attr_accessor rpm_limit: Integer?
+
+        attr_reader spend: Float?
+
+        def spend=: (Float) -> Float
+
+        attr_accessor sso_user_id: String?
+
+        attr_reader teams: ::Array[String]?
+
+        def teams=: (::Array[String]) -> ::Array[String]
+
+        attr_accessor tpm_limit: Integer?
+
+        attr_accessor user_email: String?
+
+        attr_accessor user_role: String?
+
+        def initialize: (
+          user_id: String,
+          ?budget_duration: String?,
+          ?budget_reset_at: Time?,
+          ?max_budget: Float?,
+          ?metadata: top?,
+          ?model_max_budget: top?,
+          ?model_spend: top?,
+          ?models: ::Array[top],
+          ?organization_memberships: ::Array[Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership]?,
+          ?rpm_limit: Integer?,
+          ?spend: Float,
+          ?sso_user_id: String?,
+          ?teams: ::Array[String],
+          ?tpm_limit: Integer?,
+          ?user_email: String?,
+          ?user_role: String?
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::OrganizationAddMemberResponse::updated_user
+
+        type organization_membership =
+          {
+            created_at: Time,
+            organization_id: String,
+            updated_at: Time,
+            user_id: String,
+            budget_id: String?,
+            llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership::LlmBudgetTable?,
+            spend: Float,
+            user: top,
+            user_role: String?
+          }
+
+        class OrganizationMembership < Hanzoai::BaseModel
+          attr_accessor created_at: Time
+
+          attr_accessor organization_id: String
+
+          attr_accessor updated_at: Time
+
+          attr_accessor user_id: String
+
+          attr_accessor budget_id: String?
+
+          attr_accessor llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership::LlmBudgetTable?
+
+          attr_reader spend: Float?
+
+          def spend=: (Float) -> Float
+
+          attr_reader user: top?
+
+          def user=: (top) -> top
+
+          attr_accessor user_role: String?
+
+          def initialize: (
+            created_at: Time,
+            organization_id: String,
+            updated_at: Time,
+            user_id: String,
+            ?budget_id: String?,
+            ?llm_budget_table: Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership::LlmBudgetTable?,
+            ?spend: Float,
+            ?user: top,
+            ?user_role: String?
+          ) -> void
+
+          def to_hash: -> Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::organization_membership
+
+          type llm_budget_table =
+            {
+              budget_duration: String?,
+              max_budget: Float?,
+              max_parallel_requests: Integer?,
+              model_max_budget: top?,
+              rpm_limit: Integer?,
+              soft_budget: Float?,
+              tpm_limit: Integer?
+            }
+
+          class LlmBudgetTable < Hanzoai::BaseModel
+            attr_accessor budget_duration: String?
+
+            attr_accessor max_budget: Float?
+
+            attr_accessor max_parallel_requests: Integer?
+
+            attr_accessor model_max_budget: top?
+
+            attr_accessor rpm_limit: Integer?
+
+            attr_accessor soft_budget: Float?
+
+            attr_accessor tpm_limit: Integer?
+
+            def initialize: (
+              ?budget_duration: String?,
+              ?max_budget: Float?,
+              ?max_parallel_requests: Integer?,
+              ?model_max_budget: top?,
+              ?rpm_limit: Integer?,
+              ?soft_budget: Float?,
+              ?tpm_limit: Integer?
+            ) -> void
+
+            def to_hash: -> Hanzoai::Models::OrganizationAddMemberResponse::UpdatedUser::OrganizationMembership::llm_budget_table
+          end
+        end
+      end
+    end
+  end
+end
