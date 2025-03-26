@@ -1,0 +1,9 @@
+module HanzoAI
+  module Resources
+    class Config
+      attr_reader pass_through_endpoint: HanzoAI::Resources::Config::PassThroughEndpoint
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,20 @@
+module HanzoAI
+  module Models
+    type key_retrieve_info_params =
+      { key: String? } & HanzoAI::request_parameters
+
+    class KeyRetrieveInfoParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor key: String?
+
+      def initialize: (
+        ?key: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::key_retrieve_info_params
+    end
+  end
+end

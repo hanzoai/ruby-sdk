@@ -1,0 +1,30 @@
+module HanzoAI
+  module Models
+    type team_update_member_response =
+      {
+        team_id: String,
+        user_id: String,
+        max_budget_in_team: Float?,
+        user_email: String?
+      }
+
+    class TeamUpdateMemberResponse < HanzoAI::BaseModel
+      attr_accessor team_id: String
+
+      attr_accessor user_id: String
+
+      attr_accessor max_budget_in_team: Float?
+
+      attr_accessor user_email: String?
+
+      def initialize: (
+        team_id: String,
+        user_id: String,
+        ?max_budget_in_team: Float?,
+        ?user_email: String?
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::team_update_member_response
+    end
+  end
+end

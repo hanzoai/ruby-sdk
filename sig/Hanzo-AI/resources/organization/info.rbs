@@ -1,0 +1,19 @@
+module HanzoAI
+  module Resources
+    class Organization
+      class Info
+        def retrieve: (
+          organization_id: String,
+          ?request_options: HanzoAI::request_opts
+        ) -> HanzoAI::Models::Organization::InfoRetrieveResponse
+
+        def deprecated: (
+          organizations: ::Array[String],
+          ?request_options: HanzoAI::request_opts
+        ) -> top
+
+        def initialize: (client: HanzoAI::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,36 @@
+module HanzoAI
+  module Models
+    module FineTuning
+      type job_retrieve_params =
+        {
+          custom_llm_provider: HanzoAI::Models::FineTuning::JobRetrieveParams::custom_llm_provider
+        }
+        & HanzoAI::request_parameters
+
+      class JobRetrieveParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        attr_accessor custom_llm_provider: HanzoAI::Models::FineTuning::JobRetrieveParams::custom_llm_provider
+
+        def initialize: (
+          custom_llm_provider: HanzoAI::Models::FineTuning::JobRetrieveParams::custom_llm_provider,
+          ?request_options: HanzoAI::request_opts
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::FineTuning::job_retrieve_params
+
+        type custom_llm_provider = :openai | :azure
+
+        module CustomLlmProvider
+          extend HanzoAI::Enum
+
+          OPENAI: :openai
+          AZURE: :azure
+
+          def self?.values: -> ::Array[HanzoAI::Models::FineTuning::JobRetrieveParams::custom_llm_provider]
+        end
+      end
+    end
+  end
+end

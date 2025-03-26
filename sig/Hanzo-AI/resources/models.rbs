@@ -1,0 +1,13 @@
+module HanzoAI
+  module Resources
+    class Models
+      def list: (
+        ?return_wildcard_routes: bool?,
+        ?team_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

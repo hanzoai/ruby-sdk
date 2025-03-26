@@ -1,0 +1,16 @@
+module HanzoAI
+  module Models
+    module Threads
+      type message_create_params = {  } & HanzoAI::request_parameters
+
+      class MessageCreateParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+        def to_hash: -> HanzoAI::Models::Threads::message_create_params
+      end
+    end
+  end
+end

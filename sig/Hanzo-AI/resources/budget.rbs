@@ -1,0 +1,45 @@
+module HanzoAI
+  module Resources
+    class Budget
+      def create: (
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?model_max_budget: ::Hash[Symbol, HanzoAI::Models::BudgetNew::ModelMaxBudget]?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def update: (
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?model_max_budget: ::Hash[Symbol, HanzoAI::Models::BudgetNew::ModelMaxBudget]?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def list: (?request_options: HanzoAI::request_opts) -> top
+
+      def delete: (id: String, ?request_options: HanzoAI::request_opts) -> top
+
+      def info: (
+        budgets: ::Array[String],
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def settings: (
+        budget_id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

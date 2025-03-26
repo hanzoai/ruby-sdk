@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type budget_list_params = {  } & HanzoAI::request_parameters
+
+    class BudgetListParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::budget_list_params
+    end
+  end
+end

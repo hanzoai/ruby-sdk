@@ -1,0 +1,20 @@
+module HanzoAI
+  module Models
+    type health_check_all_params =
+      { model: String? } & HanzoAI::request_parameters
+
+    class HealthCheckAllParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor model: String?
+
+      def initialize: (
+        ?model: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::health_check_all_params
+    end
+  end
+end

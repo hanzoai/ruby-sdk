@@ -1,0 +1,339 @@
+module HanzoAI
+  module Models
+    type key_list_response =
+      {
+        current_page: Integer?,
+        keys: ::Array[HanzoAI::Models::KeyListResponse::key],
+        total_count: Integer?,
+        total_pages: Integer?
+      }
+
+    class KeyListResponse < HanzoAI::BaseModel
+      attr_accessor current_page: Integer?
+
+      attr_reader keys: ::Array[HanzoAI::Models::KeyListResponse::key]?
+
+      def keys=: (
+        ::Array[HanzoAI::Models::KeyListResponse::key]
+      ) -> ::Array[HanzoAI::Models::KeyListResponse::key]
+
+      attr_accessor total_count: Integer?
+
+      attr_accessor total_pages: Integer?
+
+      def initialize: (
+        ?current_page: Integer?,
+        ?keys: ::Array[HanzoAI::Models::KeyListResponse::key],
+        ?total_count: Integer?,
+        ?total_pages: Integer?
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::key_list_response
+
+      type key = String | HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth
+
+      module Key
+        extend HanzoAI::Union
+
+        type user_api_key_auth =
+          {
+            token: String?,
+            aliases: top,
+            allowed_cache_controls: ::Array[top]?,
+            allowed_model_region: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::allowed_model_region?,
+            api_key: String?,
+            blocked: bool?,
+            budget_duration: String?,
+            budget_reset_at: Time?,
+            config: top,
+            created_at: Time?,
+            created_by: String?,
+            end_user_id: String?,
+            end_user_max_budget: Float?,
+            end_user_rpm_limit: Integer?,
+            end_user_tpm_limit: Integer?,
+            expires: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::expires?,
+            key_alias: String?,
+            key_name: String?,
+            last_refreshed_at: Float?,
+            llm_budget_table: top?,
+            max_budget: Float?,
+            max_parallel_requests: Integer?,
+            metadata: top,
+            model_max_budget: top,
+            model_spend: top,
+            models: ::Array[top],
+            org_id: String?,
+            parent_otel_span: top,
+            permissions: top,
+            rpm_limit: Integer?,
+            rpm_limit_per_model: ::Hash[Symbol, Integer]?,
+            soft_budget: Float?,
+            soft_budget_cooldown: bool,
+            spend: Float,
+            team_alias: String?,
+            team_blocked: bool,
+            team_id: String?,
+            team_max_budget: Float?,
+            team_member: HanzoAI::Models::Member?,
+            team_member_spend: Float?,
+            team_metadata: top?,
+            team_model_aliases: top?,
+            team_models: ::Array[top],
+            team_rpm_limit: Integer?,
+            team_spend: Float?,
+            team_tpm_limit: Integer?,
+            tpm_limit: Integer?,
+            tpm_limit_per_model: ::Hash[Symbol, Integer]?,
+            updated_at: Time?,
+            updated_by: String?,
+            user_email: String?,
+            user_id: String?,
+            user_role: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::user_role?,
+            user_rpm_limit: Integer?,
+            user_tpm_limit: Integer?
+          }
+
+        class UserAPIKeyAuth < HanzoAI::BaseModel
+          attr_accessor token: String?
+
+          attr_reader aliases: top?
+
+          def aliases=: (top) -> top
+
+          attr_accessor allowed_cache_controls: ::Array[top]?
+
+          attr_accessor allowed_model_region: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::allowed_model_region?
+
+          attr_accessor api_key: String?
+
+          attr_accessor blocked: bool?
+
+          attr_accessor budget_duration: String?
+
+          attr_accessor budget_reset_at: Time?
+
+          attr_reader config: top?
+
+          def config=: (top) -> top
+
+          attr_accessor created_at: Time?
+
+          attr_accessor created_by: String?
+
+          attr_accessor end_user_id: String?
+
+          attr_accessor end_user_max_budget: Float?
+
+          attr_accessor end_user_rpm_limit: Integer?
+
+          attr_accessor end_user_tpm_limit: Integer?
+
+          attr_accessor expires: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::expires?
+
+          attr_accessor key_alias: String?
+
+          attr_accessor key_name: String?
+
+          attr_accessor last_refreshed_at: Float?
+
+          attr_accessor llm_budget_table: top?
+
+          attr_accessor max_budget: Float?
+
+          attr_accessor max_parallel_requests: Integer?
+
+          attr_reader metadata: top?
+
+          def metadata=: (top) -> top
+
+          attr_reader model_max_budget: top?
+
+          def model_max_budget=: (top) -> top
+
+          attr_reader model_spend: top?
+
+          def model_spend=: (top) -> top
+
+          attr_reader models: ::Array[top]?
+
+          def models=: (::Array[top]) -> ::Array[top]
+
+          attr_accessor org_id: String?
+
+          attr_reader parent_otel_span: top?
+
+          def parent_otel_span=: (top) -> top
+
+          attr_reader permissions: top?
+
+          def permissions=: (top) -> top
+
+          attr_accessor rpm_limit: Integer?
+
+          attr_accessor rpm_limit_per_model: ::Hash[Symbol, Integer]?
+
+          attr_accessor soft_budget: Float?
+
+          attr_reader soft_budget_cooldown: bool?
+
+          def soft_budget_cooldown=: (bool) -> bool
+
+          attr_reader spend: Float?
+
+          def spend=: (Float) -> Float
+
+          attr_accessor team_alias: String?
+
+          attr_reader team_blocked: bool?
+
+          def team_blocked=: (bool) -> bool
+
+          attr_accessor team_id: String?
+
+          attr_accessor team_max_budget: Float?
+
+          attr_accessor team_member: HanzoAI::Models::Member?
+
+          attr_accessor team_member_spend: Float?
+
+          attr_accessor team_metadata: top?
+
+          attr_accessor team_model_aliases: top?
+
+          attr_reader team_models: ::Array[top]?
+
+          def team_models=: (::Array[top]) -> ::Array[top]
+
+          attr_accessor team_rpm_limit: Integer?
+
+          attr_accessor team_spend: Float?
+
+          attr_accessor team_tpm_limit: Integer?
+
+          attr_accessor tpm_limit: Integer?
+
+          attr_accessor tpm_limit_per_model: ::Hash[Symbol, Integer]?
+
+          attr_accessor updated_at: Time?
+
+          attr_accessor updated_by: String?
+
+          attr_accessor user_email: String?
+
+          attr_accessor user_id: String?
+
+          attr_accessor user_role: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::user_role?
+
+          attr_accessor user_rpm_limit: Integer?
+
+          attr_accessor user_tpm_limit: Integer?
+
+          def initialize: (
+            ?token: String?,
+            ?aliases: top,
+            ?allowed_cache_controls: ::Array[top]?,
+            ?allowed_model_region: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::allowed_model_region?,
+            ?api_key: String?,
+            ?blocked: bool?,
+            ?budget_duration: String?,
+            ?budget_reset_at: Time?,
+            ?config: top,
+            ?created_at: Time?,
+            ?created_by: String?,
+            ?end_user_id: String?,
+            ?end_user_max_budget: Float?,
+            ?end_user_rpm_limit: Integer?,
+            ?end_user_tpm_limit: Integer?,
+            ?expires: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::expires?,
+            ?key_alias: String?,
+            ?key_name: String?,
+            ?last_refreshed_at: Float?,
+            ?llm_budget_table: top?,
+            ?max_budget: Float?,
+            ?max_parallel_requests: Integer?,
+            ?metadata: top,
+            ?model_max_budget: top,
+            ?model_spend: top,
+            ?models: ::Array[top],
+            ?org_id: String?,
+            ?parent_otel_span: top,
+            ?permissions: top,
+            ?rpm_limit: Integer?,
+            ?rpm_limit_per_model: ::Hash[Symbol, Integer]?,
+            ?soft_budget: Float?,
+            ?soft_budget_cooldown: bool,
+            ?spend: Float,
+            ?team_alias: String?,
+            ?team_blocked: bool,
+            ?team_id: String?,
+            ?team_max_budget: Float?,
+            ?team_member: HanzoAI::Models::Member?,
+            ?team_member_spend: Float?,
+            ?team_metadata: top?,
+            ?team_model_aliases: top?,
+            ?team_models: ::Array[top],
+            ?team_rpm_limit: Integer?,
+            ?team_spend: Float?,
+            ?team_tpm_limit: Integer?,
+            ?tpm_limit: Integer?,
+            ?tpm_limit_per_model: ::Hash[Symbol, Integer]?,
+            ?updated_at: Time?,
+            ?updated_by: String?,
+            ?user_email: String?,
+            ?user_id: String?,
+            ?user_role: HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::user_role?,
+            ?user_rpm_limit: Integer?,
+            ?user_tpm_limit: Integer?
+          ) -> void
+
+          def to_hash: -> HanzoAI::Models::KeyListResponse::Key::user_api_key_auth
+
+          type allowed_model_region = :eu | :us
+
+          module AllowedModelRegion
+            extend HanzoAI::Enum
+
+            EU: :eu
+            US: :us
+
+            def self?.values: -> ::Array[HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::allowed_model_region]
+          end
+
+          type expires = String | Time
+
+          module Expires
+            extend HanzoAI::Union
+
+            def self?.variants: -> [String, Time]
+          end
+
+          type user_role =
+            :proxy_admin
+            | :proxy_admin_viewer
+            | :org_admin
+            | :internal_user
+            | :internal_user_viewer
+            | :team
+            | :customer
+
+          module UserRole
+            extend HanzoAI::Enum
+
+            PROXY_ADMIN: :proxy_admin
+            PROXY_ADMIN_VIEWER: :proxy_admin_viewer
+            ORG_ADMIN: :org_admin
+            INTERNAL_USER: :internal_user
+            INTERNAL_USER_VIEWER: :internal_user_viewer
+            TEAM: :team
+            CUSTOMER: :customer
+
+            def self?.values: -> ::Array[HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth::user_role]
+          end
+        end
+
+        def self?.variants: -> [String, HanzoAI::Models::KeyListResponse::Key::UserAPIKeyAuth]
+      end
+    end
+  end
+end

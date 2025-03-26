@@ -1,0 +1,26 @@
+module HanzoAI
+  module Models
+    type team_delete_params =
+      { team_ids: ::Array[String], llm_changed_by: String }
+      & HanzoAI::request_parameters
+
+    class TeamDeleteParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor team_ids: ::Array[String]
+
+      attr_reader llm_changed_by: String?
+
+      def llm_changed_by=: (String) -> String
+
+      def initialize: (
+        team_ids: ::Array[String],
+        ?llm_changed_by: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::team_delete_params
+    end
+  end
+end

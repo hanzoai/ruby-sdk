@@ -1,0 +1,35 @@
+module HanzoAI
+  module Resources
+    class Files
+      attr_reader content: HanzoAI::Resources::Files::Content
+
+      def create: (
+        String provider,
+        file: IO | StringIO,
+        purpose: String,
+        ?custom_llm_provider: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def retrieve: (
+        String file_id,
+        provider: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def list: (
+        String provider,
+        ?purpose: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def delete: (
+        String file_id,
+        provider: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

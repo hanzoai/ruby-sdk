@@ -1,0 +1,110 @@
+module HanzoAI
+  module Resources
+    class Team
+      attr_reader model: HanzoAI::Resources::Team::Model
+
+      attr_reader callback: HanzoAI::Resources::Team::Callback
+
+      def create: (
+        ?admins: ::Array[top],
+        ?blocked: bool,
+        ?budget_duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?max_budget: Float?,
+        ?members: ::Array[top],
+        ?members_with_roles: ::Array[HanzoAI::Models::Member],
+        ?metadata: top?,
+        ?model_aliases: top?,
+        ?models: ::Array[top],
+        ?organization_id: String?,
+        ?rpm_limit: Integer?,
+        ?tags: ::Array[top]?,
+        ?team_alias: String?,
+        ?team_id: String?,
+        ?tpm_limit: Integer?,
+        ?llm_changed_by: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> HanzoAI::Models::TeamCreateResponse
+
+      def update: (
+        team_id: String,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?max_budget: Float?,
+        ?metadata: top?,
+        ?model_aliases: top?,
+        ?models: ::Array[top]?,
+        ?organization_id: String?,
+        ?rpm_limit: Integer?,
+        ?tags: ::Array[top]?,
+        ?team_alias: String?,
+        ?tpm_limit: Integer?,
+        ?llm_changed_by: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def list: (
+        ?organization_id: String?,
+        ?user_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def delete: (
+        team_ids: ::Array[String],
+        ?llm_changed_by: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def add_member: (
+        member: HanzoAI::Models::TeamAddMemberParams::member,
+        team_id: String,
+        ?max_budget_in_team: Float?,
+        ?request_options: HanzoAI::request_opts
+      ) -> HanzoAI::Models::TeamAddMemberResponse
+
+      def block: (
+        team_id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def disable_logging: (
+        String team_id,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def list_available: (
+        ?response_model: top,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def remove_member: (
+        team_id: String,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def retrieve_info: (
+        ?team_id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def unblock: (
+        team_id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def update_member: (
+        team_id: String,
+        ?max_budget_in_team: Float?,
+        ?role: HanzoAI::Models::TeamUpdateMemberParams::role?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> HanzoAI::Models::TeamUpdateMemberResponse
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

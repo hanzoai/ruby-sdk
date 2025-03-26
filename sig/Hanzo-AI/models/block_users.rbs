@@ -1,0 +1,13 @@
+module HanzoAI
+  module Models
+    type block_users = { user_ids: ::Array[String] }
+
+    class BlockUsers < HanzoAI::BaseModel
+      attr_accessor user_ids: ::Array[String]
+
+      def initialize: (user_ids: ::Array[String]) -> void
+
+      def to_hash: -> HanzoAI::Models::block_users
+    end
+  end
+end

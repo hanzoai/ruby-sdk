@@ -1,0 +1,133 @@
+module HanzoAI
+  module Models
+    type team_create_response =
+      {
+        team_id: String,
+        admins: ::Array[top],
+        blocked: bool,
+        budget_duration: String?,
+        budget_reset_at: Time?,
+        created_at: Time?,
+        llm_model_table: HanzoAI::Models::TeamCreateResponse::LlmModelTable?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        members: ::Array[top],
+        members_with_roles: ::Array[HanzoAI::Models::Member],
+        metadata: top?,
+        model_id: Integer?,
+        models: ::Array[top],
+        organization_id: String?,
+        rpm_limit: Integer?,
+        spend: Float?,
+        team_alias: String?,
+        tpm_limit: Integer?
+      }
+
+    class TeamCreateResponse < HanzoAI::BaseModel
+      attr_accessor team_id: String
+
+      attr_reader admins: ::Array[top]?
+
+      def admins=: (::Array[top]) -> ::Array[top]
+
+      attr_reader blocked: bool?
+
+      def blocked=: (bool) -> bool
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_reset_at: Time?
+
+      attr_accessor created_at: Time?
+
+      attr_accessor llm_model_table: HanzoAI::Models::TeamCreateResponse::LlmModelTable?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_reader members: ::Array[top]?
+
+      def members=: (::Array[top]) -> ::Array[top]
+
+      attr_reader members_with_roles: ::Array[HanzoAI::Models::Member]?
+
+      def members_with_roles=: (
+        ::Array[HanzoAI::Models::Member]
+      ) -> ::Array[HanzoAI::Models::Member]
+
+      attr_accessor metadata: top?
+
+      attr_accessor model_id: Integer?
+
+      attr_reader models: ::Array[top]?
+
+      def models=: (::Array[top]) -> ::Array[top]
+
+      attr_accessor organization_id: String?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor spend: Float?
+
+      attr_accessor team_alias: String?
+
+      attr_accessor tpm_limit: Integer?
+
+      def initialize: (
+        team_id: String,
+        ?admins: ::Array[top],
+        ?blocked: bool,
+        ?budget_duration: String?,
+        ?budget_reset_at: Time?,
+        ?created_at: Time?,
+        ?llm_model_table: HanzoAI::Models::TeamCreateResponse::LlmModelTable?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?members: ::Array[top],
+        ?members_with_roles: ::Array[HanzoAI::Models::Member],
+        ?metadata: top?,
+        ?model_id: Integer?,
+        ?models: ::Array[top],
+        ?organization_id: String?,
+        ?rpm_limit: Integer?,
+        ?spend: Float?,
+        ?team_alias: String?,
+        ?tpm_limit: Integer?
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::team_create_response
+
+      type llm_model_table =
+        {
+          created_by: String,
+          updated_by: String,
+          model_aliases: HanzoAI::Models::TeamCreateResponse::LlmModelTable::model_aliases?
+        }
+
+      class LlmModelTable < HanzoAI::BaseModel
+        attr_accessor created_by: String
+
+        attr_accessor updated_by: String
+
+        attr_accessor model_aliases: HanzoAI::Models::TeamCreateResponse::LlmModelTable::model_aliases?
+
+        def initialize: (
+          created_by: String,
+          updated_by: String,
+          ?model_aliases: HanzoAI::Models::TeamCreateResponse::LlmModelTable::model_aliases?
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::TeamCreateResponse::llm_model_table
+
+        type model_aliases = top | String
+
+        module ModelAliases
+          extend HanzoAI::Union
+
+          def self?.variants: -> [top, String]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type openai_retrieve_params = {  } & HanzoAI::request_parameters
+
+    class OpenAIRetrieveParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::openai_retrieve_params
+    end
+  end
+end

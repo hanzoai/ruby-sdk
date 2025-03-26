@@ -1,0 +1,22 @@
+module HanzoAI
+  module Models
+    module Files
+      type content_retrieve_params =
+        { provider: String } & HanzoAI::request_parameters
+
+      class ContentRetrieveParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        attr_accessor provider: String
+
+        def initialize: (
+          provider: String,
+          ?request_options: HanzoAI::request_opts
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::Files::content_retrieve_params
+      end
+    end
+  end
+end

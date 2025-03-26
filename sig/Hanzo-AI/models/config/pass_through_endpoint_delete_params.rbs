@@ -1,0 +1,22 @@
+module HanzoAI
+  module Models
+    module Config
+      type pass_through_endpoint_delete_params =
+        { endpoint_id: String } & HanzoAI::request_parameters
+
+      class PassThroughEndpointDeleteParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        attr_accessor endpoint_id: String
+
+        def initialize: (
+          endpoint_id: String,
+          ?request_options: HanzoAI::request_opts
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::Config::pass_through_endpoint_delete_params
+      end
+    end
+  end
+end

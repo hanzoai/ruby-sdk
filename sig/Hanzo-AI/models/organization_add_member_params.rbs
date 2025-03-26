@@ -1,0 +1,44 @@
+module HanzoAI
+  module Models
+    type organization_add_member_params =
+      {
+        member: HanzoAI::Models::OrganizationAddMemberParams::member,
+        organization_id: String,
+        max_budget_in_organization: Float?
+      }
+      & HanzoAI::request_parameters
+
+    class OrganizationAddMemberParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor member: HanzoAI::Models::OrganizationAddMemberParams::member
+
+      attr_accessor organization_id: String
+
+      attr_accessor max_budget_in_organization: Float?
+
+      def initialize: (
+        member: HanzoAI::Models::OrganizationAddMemberParams::member,
+        organization_id: String,
+        ?max_budget_in_organization: Float?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::organization_add_member_params
+
+      type member =
+        ::Array[HanzoAI::Models::OrgMember] | HanzoAI::Models::OrgMember
+
+      module Member
+        extend HanzoAI::Union
+
+        type org_member_array = ::Array[HanzoAI::Models::OrgMember]
+
+        OrgMemberArray: org_member_array
+
+        def self?.variants: -> [::Array[HanzoAI::Models::OrgMember], HanzoAI::Models::OrgMember]
+      end
+    end
+  end
+end

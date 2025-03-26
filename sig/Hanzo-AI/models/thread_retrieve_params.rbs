@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type thread_retrieve_params = {  } & HanzoAI::request_parameters
+
+    class ThreadRetrieveParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::thread_retrieve_params
+    end
+  end
+end

@@ -1,0 +1,20 @@
+module HanzoAI
+  module Models
+    type batch_cancel_with_provider_params =
+      { provider: String } & HanzoAI::request_parameters
+
+    class BatchCancelWithProviderParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor provider: String
+
+      def initialize: (
+        provider: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::batch_cancel_with_provider_params
+    end
+  end
+end

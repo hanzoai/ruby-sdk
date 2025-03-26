@@ -1,0 +1,199 @@
+module HanzoAI
+  module Models
+    type model_create_params =
+      {
+        llm_params: HanzoAI::Models::ModelCreateParams::LlmParams,
+        model_info: HanzoAI::Models::ModelInfo,
+        model_name: String
+      }
+      & HanzoAI::request_parameters
+
+    class ModelCreateParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor llm_params: HanzoAI::Models::ModelCreateParams::LlmParams
+
+      attr_accessor model_info: HanzoAI::Models::ModelInfo
+
+      attr_accessor model_name: String
+
+      def initialize: (
+        llm_params: HanzoAI::Models::ModelCreateParams::LlmParams,
+        model_info: HanzoAI::Models::ModelInfo,
+        model_name: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::model_create_params
+
+      type llm_params =
+        {
+          model: String,
+          api_base: String?,
+          api_key: String?,
+          api_version: String?,
+          aws_access_key_id: String?,
+          aws_region_name: String?,
+          aws_secret_access_key: String?,
+          budget_duration: String?,
+          configurable_clientside_auth_params: ::Array[HanzoAI::Models::ModelCreateParams::LlmParams::configurable_clientside_auth_param]?,
+          custom_llm_provider: String?,
+          input_cost_per_second: Float?,
+          input_cost_per_token: Float?,
+          llm_trace_id: String?,
+          max_budget: Float?,
+          max_file_size_mb: Float?,
+          max_retries: Integer?,
+          merge_reasoning_content_in_choices: bool?,
+          model_info: top?,
+          organization: String?,
+          output_cost_per_second: Float?,
+          output_cost_per_token: Float?,
+          region_name: String?,
+          rpm: Integer?,
+          stream_timeout: HanzoAI::Models::ModelCreateParams::LlmParams::stream_timeout?,
+          timeout: HanzoAI::Models::ModelCreateParams::LlmParams::timeout?,
+          tpm: Integer?,
+          use_in_pass_through: bool?,
+          vertex_credentials: HanzoAI::Models::ModelCreateParams::LlmParams::vertex_credentials?,
+          vertex_location: String?,
+          vertex_project: String?,
+          watsonx_region_name: String?
+        }
+
+      class LlmParams < HanzoAI::BaseModel
+        attr_accessor model: String
+
+        attr_accessor api_base: String?
+
+        attr_accessor api_key: String?
+
+        attr_accessor api_version: String?
+
+        attr_accessor aws_access_key_id: String?
+
+        attr_accessor aws_region_name: String?
+
+        attr_accessor aws_secret_access_key: String?
+
+        attr_accessor budget_duration: String?
+
+        attr_accessor configurable_clientside_auth_params: ::Array[HanzoAI::Models::ModelCreateParams::LlmParams::configurable_clientside_auth_param]?
+
+        attr_accessor custom_llm_provider: String?
+
+        attr_accessor input_cost_per_second: Float?
+
+        attr_accessor input_cost_per_token: Float?
+
+        attr_accessor llm_trace_id: String?
+
+        attr_accessor max_budget: Float?
+
+        attr_accessor max_file_size_mb: Float?
+
+        attr_accessor max_retries: Integer?
+
+        attr_accessor merge_reasoning_content_in_choices: bool?
+
+        attr_accessor model_info: top?
+
+        attr_accessor organization: String?
+
+        attr_accessor output_cost_per_second: Float?
+
+        attr_accessor output_cost_per_token: Float?
+
+        attr_accessor region_name: String?
+
+        attr_accessor rpm: Integer?
+
+        attr_accessor stream_timeout: HanzoAI::Models::ModelCreateParams::LlmParams::stream_timeout?
+
+        attr_accessor timeout: HanzoAI::Models::ModelCreateParams::LlmParams::timeout?
+
+        attr_accessor tpm: Integer?
+
+        attr_accessor use_in_pass_through: bool?
+
+        attr_accessor vertex_credentials: HanzoAI::Models::ModelCreateParams::LlmParams::vertex_credentials?
+
+        attr_accessor vertex_location: String?
+
+        attr_accessor vertex_project: String?
+
+        attr_accessor watsonx_region_name: String?
+
+        def initialize: (
+          model: String,
+          ?api_base: String?,
+          ?api_key: String?,
+          ?api_version: String?,
+          ?aws_access_key_id: String?,
+          ?aws_region_name: String?,
+          ?aws_secret_access_key: String?,
+          ?budget_duration: String?,
+          ?configurable_clientside_auth_params: ::Array[HanzoAI::Models::ModelCreateParams::LlmParams::configurable_clientside_auth_param]?,
+          ?custom_llm_provider: String?,
+          ?input_cost_per_second: Float?,
+          ?input_cost_per_token: Float?,
+          ?llm_trace_id: String?,
+          ?max_budget: Float?,
+          ?max_file_size_mb: Float?,
+          ?max_retries: Integer?,
+          ?merge_reasoning_content_in_choices: bool?,
+          ?model_info: top?,
+          ?organization: String?,
+          ?output_cost_per_second: Float?,
+          ?output_cost_per_token: Float?,
+          ?region_name: String?,
+          ?rpm: Integer?,
+          ?stream_timeout: HanzoAI::Models::ModelCreateParams::LlmParams::stream_timeout?,
+          ?timeout: HanzoAI::Models::ModelCreateParams::LlmParams::timeout?,
+          ?tpm: Integer?,
+          ?use_in_pass_through: bool?,
+          ?vertex_credentials: HanzoAI::Models::ModelCreateParams::LlmParams::vertex_credentials?,
+          ?vertex_location: String?,
+          ?vertex_project: String?,
+          ?watsonx_region_name: String?
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::ModelCreateParams::llm_params
+
+        type configurable_clientside_auth_param =
+          String | HanzoAI::Models::ConfigurableClientsideParamsCustomAuth
+
+        module ConfigurableClientsideAuthParam
+          extend HanzoAI::Union
+
+          def self?.variants: -> [String, HanzoAI::Models::ConfigurableClientsideParamsCustomAuth]
+        end
+
+        type stream_timeout = Float | String
+
+        module StreamTimeout
+          extend HanzoAI::Union
+
+          def self?.variants: -> [Float, String]
+        end
+
+        type timeout = Float | String
+
+        module Timeout
+          extend HanzoAI::Union
+
+          def self?.variants: -> [Float, String]
+        end
+
+        type vertex_credentials = top | String
+
+        module VertexCredentials
+          extend HanzoAI::Union
+
+          def self?.variants: -> [top, String]
+        end
+      end
+    end
+  end
+end

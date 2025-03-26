@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type cache_flush_all_params = {  } & HanzoAI::request_parameters
+
+    class CacheFlushAllParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::cache_flush_all_params
+    end
+  end
+end

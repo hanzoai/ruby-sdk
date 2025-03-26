@@ -1,0 +1,141 @@
+module HanzoAI
+  module Models
+    module Global
+      type spend_retrieve_report_response_item =
+        {
+          api_key: String,
+          call_type: String,
+          end_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::end_time?,
+          messages: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::messages?,
+          request_id: String,
+          response: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::response?,
+          start_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::start_time?,
+          api_base: String?,
+          cache_hit: String?,
+          cache_key: String?,
+          completion_tokens: Integer?,
+          metadata: top,
+          model: String?,
+          prompt_tokens: Integer?,
+          request_tags: top,
+          requester_ip_address: String?,
+          spend: Float?,
+          total_tokens: Integer?,
+          user: String?
+        }
+
+      class SpendRetrieveReportResponseItem < HanzoAI::BaseModel
+        attr_accessor api_key: String
+
+        attr_accessor call_type: String
+
+        attr_accessor end_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::end_time?
+
+        attr_accessor messages: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::messages?
+
+        attr_accessor request_id: String
+
+        attr_accessor response: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::response?
+
+        attr_accessor start_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::start_time?
+
+        attr_accessor api_base: String?
+
+        attr_accessor cache_hit: String?
+
+        attr_accessor cache_key: String?
+
+        attr_accessor completion_tokens: Integer?
+
+        attr_reader metadata: top?
+
+        def metadata=: (top) -> top
+
+        attr_accessor model: String?
+
+        attr_accessor prompt_tokens: Integer?
+
+        attr_reader request_tags: top?
+
+        def request_tags=: (top) -> top
+
+        attr_accessor requester_ip_address: String?
+
+        attr_accessor spend: Float?
+
+        attr_accessor total_tokens: Integer?
+
+        attr_accessor user: String?
+
+        def initialize: (
+          api_key: String,
+          call_type: String,
+          end_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::end_time?,
+          messages: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::messages?,
+          request_id: String,
+          response: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::response?,
+          start_time: HanzoAI::Models::Global::SpendRetrieveReportResponseItem::start_time?,
+          ?api_base: String?,
+          ?cache_hit: String?,
+          ?cache_key: String?,
+          ?completion_tokens: Integer?,
+          ?metadata: top,
+          ?model: String?,
+          ?prompt_tokens: Integer?,
+          ?request_tags: top,
+          ?requester_ip_address: String?,
+          ?spend: Float?,
+          ?total_tokens: Integer?,
+          ?user: String?
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::Global::spend_retrieve_report_response_item
+
+        type end_time = String | Time
+
+        module EndTime
+          extend HanzoAI::Union
+
+          def self?.variants: -> [String, Time]
+        end
+
+        type messages = String | ::Array[top] | top
+
+        module Messages
+          extend HanzoAI::Union
+
+          type union_member1_array = ::Array[top]
+
+          UnionMember1Array: union_member1_array
+
+          def self?.variants: -> [String, ::Array[top], top]
+        end
+
+        type response = String | ::Array[top] | top
+
+        module Response
+          extend HanzoAI::Union
+
+          type union_member1_array = ::Array[top]
+
+          UnionMember1Array: union_member1_array
+
+          def self?.variants: -> [String, ::Array[top], top]
+        end
+
+        type start_time = String | Time
+
+        module StartTime
+          extend HanzoAI::Union
+
+          def self?.variants: -> [String, Time]
+        end
+      end
+
+      type spend_retrieve_report_response =
+        ::Array[HanzoAI::Models::Global::SpendRetrieveReportResponseItem]
+
+      SpendRetrieveReportResponse: spend_retrieve_report_response
+    end
+  end
+end

@@ -1,0 +1,22 @@
+module HanzoAI
+  module Models
+    type team_retrieve_info_params =
+      { team_id: String } & HanzoAI::request_parameters
+
+    class TeamRetrieveInfoParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_reader team_id: String?
+
+      def team_id=: (String) -> String
+
+      def initialize: (
+        ?team_id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::team_retrieve_info_params
+    end
+  end
+end

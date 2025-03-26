@@ -1,0 +1,24 @@
+module HanzoAI
+  module Models
+    type model_list_params =
+      { return_wildcard_routes: bool?, team_id: String? }
+      & HanzoAI::request_parameters
+
+    class ModelListParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor return_wildcard_routes: bool?
+
+      attr_accessor team_id: String?
+
+      def initialize: (
+        ?return_wildcard_routes: bool?,
+        ?team_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::model_list_params
+    end
+  end
+end
