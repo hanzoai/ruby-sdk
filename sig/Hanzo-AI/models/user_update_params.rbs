@@ -1,0 +1,132 @@
+module HanzoAI
+  module Models
+    type user_update_params =
+      {
+        aliases: top?,
+        allowed_cache_controls: ::Array[top]?,
+        blocked: bool?,
+        budget_duration: String?,
+        config: top?,
+        duration: String?,
+        guardrails: ::Array[String]?,
+        key_alias: String?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        metadata: top?,
+        model_max_budget: top?,
+        model_rpm_limit: top?,
+        model_tpm_limit: top?,
+        models: ::Array[top]?,
+        password: String?,
+        permissions: top?,
+        rpm_limit: Integer?,
+        spend: Float?,
+        team_id: String?,
+        tpm_limit: Integer?,
+        user_email: String?,
+        user_id: String?,
+        user_role: HanzoAI::Models::UserUpdateParams::user_role?
+      }
+      & HanzoAI::request_parameters
+
+    class UserUpdateParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor aliases: top?
+
+      attr_accessor allowed_cache_controls: ::Array[top]?
+
+      attr_accessor blocked: bool?
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor config: top?
+
+      attr_accessor duration: String?
+
+      attr_accessor guardrails: ::Array[String]?
+
+      attr_accessor key_alias: String?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_accessor metadata: top?
+
+      attr_accessor model_max_budget: top?
+
+      attr_accessor model_rpm_limit: top?
+
+      attr_accessor model_tpm_limit: top?
+
+      attr_accessor models: ::Array[top]?
+
+      attr_accessor password: String?
+
+      attr_accessor permissions: top?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor spend: Float?
+
+      attr_accessor team_id: String?
+
+      attr_accessor tpm_limit: Integer?
+
+      attr_accessor user_email: String?
+
+      attr_accessor user_id: String?
+
+      attr_accessor user_role: HanzoAI::Models::UserUpdateParams::user_role?
+
+      def initialize: (
+        ?aliases: top?,
+        ?allowed_cache_controls: ::Array[top]?,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?config: top?,
+        ?duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?key_alias: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top?,
+        ?model_max_budget: top?,
+        ?model_rpm_limit: top?,
+        ?model_tpm_limit: top?,
+        ?models: ::Array[top]?,
+        ?password: String?,
+        ?permissions: top?,
+        ?rpm_limit: Integer?,
+        ?spend: Float?,
+        ?team_id: String?,
+        ?tpm_limit: Integer?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?user_role: HanzoAI::Models::UserUpdateParams::user_role?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::user_update_params
+
+      type user_role =
+        :proxy_admin
+        | :proxy_admin_viewer
+        | :internal_user
+        | :internal_user_viewer
+
+      module UserRole
+        extend HanzoAI::Enum
+
+        PROXY_ADMIN: :proxy_admin
+        PROXY_ADMIN_VIEWER: :proxy_admin_viewer
+        INTERNAL_USER: :internal_user
+        INTERNAL_USER_VIEWER: :internal_user_viewer
+
+        def self?.values: -> ::Array[HanzoAI::Models::UserUpdateParams::user_role]
+      end
+    end
+  end
+end

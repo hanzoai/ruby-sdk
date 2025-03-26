@@ -1,0 +1,26 @@
+module HanzoAI
+  module Models
+    type user_delete_params =
+      { user_ids: ::Array[String], llm_changed_by: String }
+      & HanzoAI::request_parameters
+
+    class UserDeleteParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor user_ids: ::Array[String]
+
+      attr_reader llm_changed_by: String?
+
+      def llm_changed_by=: (String) -> String
+
+      def initialize: (
+        user_ids: ::Array[String],
+        ?llm_changed_by: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::user_delete_params
+    end
+  end
+end

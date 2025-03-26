@@ -1,0 +1,22 @@
+module HanzoAI
+  module Models
+    module Model
+      type info_list_params =
+        { llm_model_id: String? } & HanzoAI::request_parameters
+
+      class InfoListParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        attr_accessor llm_model_id: String?
+
+        def initialize: (
+          ?llm_model_id: String?,
+          ?request_options: HanzoAI::request_opts
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::Model::info_list_params
+      end
+    end
+  end
+end

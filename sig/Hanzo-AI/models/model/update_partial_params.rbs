@@ -1,0 +1,16 @@
+module HanzoAI
+  module Models
+    module Model
+      type update_partial_params = {  } & HanzoAI::request_parameters
+
+      class UpdatePartialParams < HanzoAI::Models::Model::UpdateDeployment
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+        def to_hash: -> HanzoAI::Models::Model::update_partial_params
+      end
+    end
+  end
+end

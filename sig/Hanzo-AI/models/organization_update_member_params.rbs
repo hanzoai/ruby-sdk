@@ -1,0 +1,62 @@
+module HanzoAI
+  module Models
+    type organization_update_member_params =
+      {
+        organization_id: String,
+        max_budget_in_organization: Float?,
+        role: HanzoAI::Models::OrganizationUpdateMemberParams::role?,
+        user_email: String?,
+        user_id: String?
+      }
+      & HanzoAI::request_parameters
+
+    class OrganizationUpdateMemberParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor organization_id: String
+
+      attr_accessor max_budget_in_organization: Float?
+
+      attr_accessor role: HanzoAI::Models::OrganizationUpdateMemberParams::role?
+
+      attr_accessor user_email: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        organization_id: String,
+        ?max_budget_in_organization: Float?,
+        ?role: HanzoAI::Models::OrganizationUpdateMemberParams::role?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::organization_update_member_params
+
+      type role =
+        :proxy_admin
+        | :proxy_admin_viewer
+        | :org_admin
+        | :internal_user
+        | :internal_user_viewer
+        | :team
+        | :customer
+
+      module Role
+        extend HanzoAI::Enum
+
+        PROXY_ADMIN: :proxy_admin
+        PROXY_ADMIN_VIEWER: :proxy_admin_viewer
+        ORG_ADMIN: :org_admin
+        INTERNAL_USER: :internal_user
+        INTERNAL_USER_VIEWER: :internal_user_viewer
+        TEAM: :team
+        CUSTOMER: :customer
+
+        def self?.values: -> ::Array[HanzoAI::Models::OrganizationUpdateMemberParams::role]
+      end
+    end
+  end
+end

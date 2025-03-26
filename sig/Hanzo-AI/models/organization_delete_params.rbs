@@ -1,0 +1,20 @@
+module HanzoAI
+  module Models
+    type organization_delete_params =
+      { organization_ids: ::Array[String] } & HanzoAI::request_parameters
+
+    class OrganizationDeleteParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor organization_ids: ::Array[String]
+
+      def initialize: (
+        organization_ids: ::Array[String],
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::organization_delete_params
+    end
+  end
+end

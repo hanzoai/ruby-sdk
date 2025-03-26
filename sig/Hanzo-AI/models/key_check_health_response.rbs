@@ -1,0 +1,77 @@
+module HanzoAI
+  module Models
+    type key_check_health_response =
+      {
+        key: HanzoAI::Models::KeyCheckHealthResponse::key,
+        logging_callbacks: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks?
+      }
+
+    class KeyCheckHealthResponse < HanzoAI::BaseModel
+      attr_reader key: HanzoAI::Models::KeyCheckHealthResponse::key?
+
+      def key=: (
+        HanzoAI::Models::KeyCheckHealthResponse::key
+      ) -> HanzoAI::Models::KeyCheckHealthResponse::key
+
+      attr_accessor logging_callbacks: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks?
+
+      def initialize: (
+        ?key: HanzoAI::Models::KeyCheckHealthResponse::key,
+        ?logging_callbacks: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks?
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::key_check_health_response
+
+      type key = :healthy | :unhealthy
+
+      module Key
+        extend HanzoAI::Enum
+
+        HEALTHY: :healthy
+        UNHEALTHY: :unhealthy
+
+        def self?.values: -> ::Array[HanzoAI::Models::KeyCheckHealthResponse::key]
+      end
+
+      type logging_callbacks =
+        {
+          callbacks: ::Array[String],
+          details: String?,
+          status: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status
+        }
+
+      class LoggingCallbacks < HanzoAI::BaseModel
+        attr_reader callbacks: ::Array[String]?
+
+        def callbacks=: (::Array[String]) -> ::Array[String]
+
+        attr_accessor details: String?
+
+        attr_reader status: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status?
+
+        def status=: (
+          HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status
+        ) -> HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status
+
+        def initialize: (
+          ?callbacks: ::Array[String],
+          ?details: String?,
+          ?status: HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::KeyCheckHealthResponse::logging_callbacks
+
+        type status = :healthy | :unhealthy
+
+        module Status
+          extend HanzoAI::Enum
+
+          HEALTHY: :healthy
+          UNHEALTHY: :unhealthy
+
+          def self?.values: -> ::Array[HanzoAI::Models::KeyCheckHealthResponse::LoggingCallbacks::status]
+        end
+      end
+    end
+  end
+end

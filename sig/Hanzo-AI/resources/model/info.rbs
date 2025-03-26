@@ -1,0 +1,14 @@
+module HanzoAI
+  module Resources
+    class Model
+      class Info
+        def list: (
+          ?llm_model_id: String?,
+          ?request_options: HanzoAI::request_opts
+        ) -> top
+
+        def initialize: (client: HanzoAI::Client) -> void
+      end
+    end
+  end
+end

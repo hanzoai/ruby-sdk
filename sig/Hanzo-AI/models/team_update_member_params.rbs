@@ -1,0 +1,50 @@
+module HanzoAI
+  module Models
+    type team_update_member_params =
+      {
+        team_id: String,
+        max_budget_in_team: Float?,
+        role: HanzoAI::Models::TeamUpdateMemberParams::role?,
+        user_email: String?,
+        user_id: String?
+      }
+      & HanzoAI::request_parameters
+
+    class TeamUpdateMemberParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor team_id: String
+
+      attr_accessor max_budget_in_team: Float?
+
+      attr_accessor role: HanzoAI::Models::TeamUpdateMemberParams::role?
+
+      attr_accessor user_email: String?
+
+      attr_accessor user_id: String?
+
+      def initialize: (
+        team_id: String,
+        ?max_budget_in_team: Float?,
+        ?role: HanzoAI::Models::TeamUpdateMemberParams::role?,
+        ?user_email: String?,
+        ?user_id: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::team_update_member_params
+
+      type role = :admin | :user
+
+      module Role
+        extend HanzoAI::Enum
+
+        ADMIN: :admin
+        USER: :user
+
+        def self?.values: -> ::Array[HanzoAI::Models::TeamUpdateMemberParams::role]
+      end
+    end
+  end
+end

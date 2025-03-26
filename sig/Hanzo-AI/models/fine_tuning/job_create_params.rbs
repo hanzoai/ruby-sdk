@@ -1,0 +1,112 @@
+module HanzoAI
+  module Models
+    module FineTuning
+      type job_create_params =
+        {
+          custom_llm_provider: HanzoAI::Models::FineTuning::JobCreateParams::custom_llm_provider,
+          model: String,
+          training_file: String,
+          hyperparameters: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters?,
+          integrations: ::Array[String]?,
+          seed: Integer?,
+          suffix: String?,
+          validation_file: String?
+        }
+        & HanzoAI::request_parameters
+
+      class JobCreateParams < HanzoAI::BaseModel
+        extend HanzoAI::RequestParameters::Converter
+        include HanzoAI::RequestParameters
+
+        attr_accessor custom_llm_provider: HanzoAI::Models::FineTuning::JobCreateParams::custom_llm_provider
+
+        attr_accessor model: String
+
+        attr_accessor training_file: String
+
+        attr_accessor hyperparameters: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters?
+
+        attr_accessor integrations: ::Array[String]?
+
+        attr_accessor seed: Integer?
+
+        attr_accessor suffix: String?
+
+        attr_accessor validation_file: String?
+
+        def initialize: (
+          custom_llm_provider: HanzoAI::Models::FineTuning::JobCreateParams::custom_llm_provider,
+          model: String,
+          training_file: String,
+          ?hyperparameters: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters?,
+          ?integrations: ::Array[String]?,
+          ?seed: Integer?,
+          ?suffix: String?,
+          ?validation_file: String?,
+          ?request_options: HanzoAI::request_opts
+        ) -> void
+
+        def to_hash: -> HanzoAI::Models::FineTuning::job_create_params
+
+        type custom_llm_provider = :openai | :azure | :vertex_ai
+
+        module CustomLlmProvider
+          extend HanzoAI::Enum
+
+          OPENAI: :openai
+          AZURE: :azure
+          VERTEX_AI: :vertex_ai
+
+          def self?.values: -> ::Array[HanzoAI::Models::FineTuning::JobCreateParams::custom_llm_provider]
+        end
+
+        type hyperparameters =
+          {
+            batch_size: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::batch_size?,
+            learning_rate_multiplier: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::learning_rate_multiplier?,
+            n_epochs: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::n_epochs?
+          }
+
+        class Hyperparameters < HanzoAI::BaseModel
+          attr_accessor batch_size: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::batch_size?
+
+          attr_accessor learning_rate_multiplier: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::learning_rate_multiplier?
+
+          attr_accessor n_epochs: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::n_epochs?
+
+          def initialize: (
+            ?batch_size: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::batch_size?,
+            ?learning_rate_multiplier: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::learning_rate_multiplier?,
+            ?n_epochs: HanzoAI::Models::FineTuning::JobCreateParams::Hyperparameters::n_epochs?
+          ) -> void
+
+          def to_hash: -> HanzoAI::Models::FineTuning::JobCreateParams::hyperparameters
+
+          type batch_size = String | Integer
+
+          module BatchSize
+            extend HanzoAI::Union
+
+            def self?.variants: -> [String, Integer]
+          end
+
+          type learning_rate_multiplier = String | Float
+
+          module LearningRateMultiplier
+            extend HanzoAI::Union
+
+            def self?.variants: -> [String, Float]
+          end
+
+          type n_epochs = String | Integer
+
+          module NEpochs
+            extend HanzoAI::Union
+
+            def self?.variants: -> [String, Integer]
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,11 @@
+module HanzoAI
+  module Resources
+    class Audio
+      class Speech
+        def create: (?request_options: HanzoAI::request_opts) -> top
+
+        def initialize: (client: HanzoAI::Client) -> void
+      end
+    end
+  end
+end

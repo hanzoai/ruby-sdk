@@ -1,0 +1,14 @@
+module HanzoAI
+  module Resources
+    class Responses
+      class InputItems
+        def list: (
+          String response_id,
+          ?request_options: HanzoAI::request_opts
+        ) -> top
+
+        def initialize: (client: HanzoAI::Client) -> void
+      end
+    end
+  end
+end

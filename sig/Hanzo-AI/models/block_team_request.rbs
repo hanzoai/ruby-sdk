@@ -1,0 +1,13 @@
+module HanzoAI
+  module Models
+    type block_team_request = { team_id: String }
+
+    class BlockTeamRequest < HanzoAI::BaseModel
+      attr_accessor team_id: String
+
+      def initialize: (team_id: String) -> void
+
+      def to_hash: -> HanzoAI::Models::block_team_request
+    end
+  end
+end

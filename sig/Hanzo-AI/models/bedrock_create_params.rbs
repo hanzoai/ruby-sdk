@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type bedrock_create_params = {  } & HanzoAI::request_parameters
+
+    class BedrockCreateParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::bedrock_create_params
+    end
+  end
+end

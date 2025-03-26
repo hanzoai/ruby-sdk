@@ -1,0 +1,14 @@
+module HanzoAI
+  module Models
+    type team_block_params = {  } & HanzoAI::request_parameters
+
+    class TeamBlockParams < HanzoAI::Models::BlockTeamRequest
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      def initialize: (?request_options: HanzoAI::request_opts) -> void
+
+      def to_hash: -> HanzoAI::Models::team_block_params
+    end
+  end
+end

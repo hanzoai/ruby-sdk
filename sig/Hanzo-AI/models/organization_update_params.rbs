@@ -1,0 +1,47 @@
+module HanzoAI
+  module Models
+    type organization_update_params =
+      {
+        budget_id: String?,
+        metadata: top?,
+        models: ::Array[String]?,
+        organization_alias: String?,
+        organization_id: String?,
+        spend: Float?,
+        updated_by: String?
+      }
+      & HanzoAI::request_parameters
+
+    class OrganizationUpdateParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor budget_id: String?
+
+      attr_accessor metadata: top?
+
+      attr_accessor models: ::Array[String]?
+
+      attr_accessor organization_alias: String?
+
+      attr_accessor organization_id: String?
+
+      attr_accessor spend: Float?
+
+      attr_accessor updated_by: String?
+
+      def initialize: (
+        ?budget_id: String?,
+        ?metadata: top?,
+        ?models: ::Array[String]?,
+        ?organization_alias: String?,
+        ?organization_id: String?,
+        ?spend: Float?,
+        ?updated_by: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::organization_update_params
+    end
+  end
+end

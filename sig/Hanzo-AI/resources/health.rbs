@@ -1,0 +1,23 @@
+module HanzoAI
+  module Resources
+    class Health
+      def check_all: (
+        ?model: String?,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def check_liveliness: (?request_options: HanzoAI::request_opts) -> top
+
+      def check_liveness: (?request_options: HanzoAI::request_opts) -> top
+
+      def check_readiness: (?request_options: HanzoAI::request_opts) -> top
+
+      def check_services: (
+        service: HanzoAI::Models::HealthCheckServicesParams::service,
+        ?request_options: HanzoAI::request_opts
+      ) -> top
+
+      def initialize: (client: HanzoAI::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,19 @@
+module HanzoAI
+  module Models
+    type budget_delete_params = { id: String } & HanzoAI::request_parameters
+
+    class BudgetDeleteParams < HanzoAI::BaseModel
+      extend HanzoAI::RequestParameters::Converter
+      include HanzoAI::RequestParameters
+
+      attr_accessor id: String
+
+      def initialize: (
+        id: String,
+        ?request_options: HanzoAI::request_opts
+      ) -> void
+
+      def to_hash: -> HanzoAI::Models::budget_delete_params
+    end
+  end
+end
