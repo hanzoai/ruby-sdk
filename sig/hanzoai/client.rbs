@@ -8,6 +8,11 @@ module Hanzoai
 
     DEFAULT_MAX_RETRY_DELAY: Float
 
+    ENVIRONMENTS: {
+      production: "https://api.hanzo.ai",
+      sandbox: "https://api.sandbox.hanzo.ai"
+    }
+
     attr_reader api_key: String
 
     attr_reader models: Hanzoai::Resources::Models
@@ -111,6 +116,7 @@ module Hanzoai
     private def auth_headers: -> ::Hash[String, String]
 
     def initialize: (
+      ?environment: :production | :sandbox | nil,
       ?base_url: String?,
       ?api_key: String?,
       ?max_retries: Integer,

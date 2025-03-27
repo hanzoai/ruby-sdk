@@ -11,6 +11,23 @@ class HanzoaiTest < Minitest::Test
     Thread.current.thread_variable_set(:mock_sleep, nil)
   end
 
+  def test_raises_on_both_base_url_and_environment
+    e = assert_raises(ArgumentError) do
+      Hanzoai::Client.new(
+        base_url: "https://localhost:8000",
+        environment: "production"
+      )
+    end
+    assert_match(/both environment and base_url given/, e.message)
+  end
+
+  def test_raises_on_unknown_environment
+    e = assert_raises(ArgumentError) do
+      Hanzoai::Client.new(environment: "wrong")
+    end
+    assert_match(/environment must be one of/, e.message)
+  end
+
   def test_raises_on_missing_non_nullable_opts
     e = assert_raises(ArgumentError) do
       Hanzoai::Client.new
