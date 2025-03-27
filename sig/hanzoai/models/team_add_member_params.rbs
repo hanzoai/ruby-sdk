@@ -1,0 +1,43 @@
+module Hanzoai
+  module Models
+    type team_add_member_params =
+      {
+        member: Hanzoai::Models::TeamAddMemberParams::member,
+        team_id: String,
+        max_budget_in_team: Float?
+      }
+      & Hanzoai::request_parameters
+
+    class TeamAddMemberParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor member: Hanzoai::Models::TeamAddMemberParams::member
+
+      attr_accessor team_id: String
+
+      attr_accessor max_budget_in_team: Float?
+
+      def initialize: (
+        member: Hanzoai::Models::TeamAddMemberParams::member,
+        team_id: String,
+        ?max_budget_in_team: Float?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::team_add_member_params
+
+      type member = ::Array[Hanzoai::Models::Member] | Hanzoai::Models::Member
+
+      module Member
+        extend Hanzoai::Union
+
+        type member_array = ::Array[Hanzoai::Models::Member]
+
+        MemberArray: member_array
+
+        def self?.variants: -> [::Array[Hanzoai::Models::Member], Hanzoai::Models::Member]
+      end
+    end
+  end
+end

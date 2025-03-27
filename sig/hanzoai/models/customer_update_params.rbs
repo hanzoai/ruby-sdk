@@ -1,0 +1,60 @@
+module Hanzoai
+  module Models
+    type customer_update_params =
+      {
+        user_id: String,
+        alias_: String?,
+        allowed_model_region: Hanzoai::Models::CustomerUpdateParams::allowed_model_region?,
+        blocked: bool,
+        budget_id: String?,
+        default_model: String?,
+        max_budget: Float?
+      }
+      & Hanzoai::request_parameters
+
+    class CustomerUpdateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor user_id: String
+
+      attr_accessor alias_: String?
+
+      attr_accessor allowed_model_region: Hanzoai::Models::CustomerUpdateParams::allowed_model_region?
+
+      attr_reader blocked: bool?
+
+      def blocked=: (bool) -> bool
+
+      attr_accessor budget_id: String?
+
+      attr_accessor default_model: String?
+
+      attr_accessor max_budget: Float?
+
+      def initialize: (
+        user_id: String,
+        ?alias_: String?,
+        ?allowed_model_region: Hanzoai::Models::CustomerUpdateParams::allowed_model_region?,
+        ?blocked: bool,
+        ?budget_id: String?,
+        ?default_model: String?,
+        ?max_budget: Float?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::customer_update_params
+
+      type allowed_model_region = :eu | :us
+
+      module AllowedModelRegion
+        extend Hanzoai::Enum
+
+        EU: :eu
+        US: :us
+
+        def self?.values: -> ::Array[Hanzoai::Models::CustomerUpdateParams::allowed_model_region]
+      end
+    end
+  end
+end

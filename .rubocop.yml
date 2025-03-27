@@ -39,7 +39,7 @@ Layout/LineLength:
   AllowedPatterns:
     - "^\\s*#.*$"
     - ^require(_relative)?
-    - "HanzoAI::(Models|Resources)::"
+    - "Hanzoai::(Models|Resources)::"
   Max: 110
 
 Layout/MultilineArrayLineBreaks:

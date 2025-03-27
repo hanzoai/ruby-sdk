@@ -1,0 +1,11 @@
+module Hanzoai
+  module Resources
+    class Provider
+      def list_budgets: (
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::ProviderListBudgetsResponse
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

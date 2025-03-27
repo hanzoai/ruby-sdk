@@ -1,0 +1,24 @@
+module Hanzoai
+  module Resources
+    class Model
+      class Update
+        def full: (
+          ?llm_params: Hanzoai::Models::Model::UpdateDeployment::LlmParams?,
+          ?model_info: Hanzoai::Models::ModelInfo?,
+          ?model_name: String?,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def partial: (
+          String model_id,
+          ?llm_params: Hanzoai::Models::Model::UpdateDeployment::LlmParams?,
+          ?model_info: Hanzoai::Models::ModelInfo?,
+          ?model_name: String?,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

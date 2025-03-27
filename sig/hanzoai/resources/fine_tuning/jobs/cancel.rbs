@@ -1,0 +1,16 @@
+module Hanzoai
+  module Resources
+    class FineTuning
+      class Jobs
+        class Cancel
+          def create: (
+            String fine_tuning_job_id,
+            ?request_options: Hanzoai::request_opts
+          ) -> top
+
+          def initialize: (client: Hanzoai::Client) -> void
+        end
+      end
+    end
+  end
+end

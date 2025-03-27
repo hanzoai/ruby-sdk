@@ -1,0 +1,9 @@
+module Hanzoai
+  module Resources
+    class Key
+      class Regenerate
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

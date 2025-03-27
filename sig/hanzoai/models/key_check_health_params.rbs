@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type key_check_health_params = {  } & Hanzoai::request_parameters
+
+    class KeyCheckHealthParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::key_check_health_params
+    end
+  end
+end

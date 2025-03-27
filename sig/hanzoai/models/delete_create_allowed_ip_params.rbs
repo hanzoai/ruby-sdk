@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type delete_create_allowed_ip_params = {  } & Hanzoai::request_parameters
+
+    class DeleteCreateAllowedIPParams < Hanzoai::Models::IPAddress
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::delete_create_allowed_ip_params
+    end
+  end
+end

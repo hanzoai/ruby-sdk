@@ -1,0 +1,69 @@
+module Hanzoai
+  module Models
+    type organization_create_params =
+      {
+        organization_alias: String,
+        budget_duration: String?,
+        budget_id: String?,
+        max_budget: Float?,
+        max_parallel_requests: Integer?,
+        metadata: top?,
+        model_max_budget: top?,
+        models: ::Array[top],
+        organization_id: String?,
+        rpm_limit: Integer?,
+        soft_budget: Float?,
+        tpm_limit: Integer?
+      }
+      & Hanzoai::request_parameters
+
+    class OrganizationCreateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor organization_alias: String
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor budget_id: String?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor max_parallel_requests: Integer?
+
+      attr_accessor metadata: top?
+
+      attr_accessor model_max_budget: top?
+
+      attr_reader models: ::Array[top]?
+
+      def models=: (::Array[top]) -> ::Array[top]
+
+      attr_accessor organization_id: String?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor soft_budget: Float?
+
+      attr_accessor tpm_limit: Integer?
+
+      def initialize: (
+        organization_alias: String,
+        ?budget_duration: String?,
+        ?budget_id: String?,
+        ?max_budget: Float?,
+        ?max_parallel_requests: Integer?,
+        ?metadata: top?,
+        ?model_max_budget: top?,
+        ?models: ::Array[top],
+        ?organization_id: String?,
+        ?rpm_limit: Integer?,
+        ?soft_budget: Float?,
+        ?tpm_limit: Integer?,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::organization_create_params
+    end
+  end
+end

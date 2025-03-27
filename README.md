@@ -6,7 +6,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
-Documentation for released of this gem can be found [on RubyDoc](https://gemdocs.org/gems/Hanzo-AI).
+Documentation for released of this gem can be found [on RubyDoc](https://gemdocs.org/gems/hanzoai).
 
 The underlying REST API documentation can be found on [docs.hanzo.ai](https://docs.hanzo.ai).
 
@@ -15,7 +15,7 @@ The underlying REST API documentation can be found on [docs.hanzo.ai](https://do
 To use this gem during the beta, install directly from GitHub with Bundler by adding the following to your application's `Gemfile`:
 
 ```ruby
-gem "Hanzo-AI", git: "https://github.com/stainless-sdks/Hanzo-AI-ruby", branch: "main"
+gem "hanzoai", git: "https://github.com/hanzoai/ruby-sdk", branch: "main"
 ```
 
 To fetch an initial copy of the gem:
@@ -27,16 +27,16 @@ bundle install
 To update the version used by your application when updates are pushed to GitHub:
 
 ```sh
-bundle update Hanzo-AI
+bundle update hanzoai
 ```
 
 ## Usage
 
 ```ruby
 require "bundler/setup"
-require "Hanzo-AI"
+require "hanzoai"
 
-hanzo = HanzoAI::Client.new(
+hanzo = Hanzoai::Client.new(
   api_key: "My API Key" # defaults to ENV["HANZO_API_KEY"]
 )
 
@@ -47,12 +47,12 @@ puts(response)
 
 ### Errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `HanzoAI::Error` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Hanzoai::Error` will be thrown:
 
 ```ruby
 begin
   client = hanzo.get_home
-rescue HanzoAI::Error => e
+rescue Hanzoai::Error => e
   puts(e.status) # 400
 end
 ```
@@ -83,7 +83,7 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-hanzo = HanzoAI::Client.new(
+hanzo = Hanzoai::Client.new(
   max_retries: 0 # default is 2
 )
 
@@ -101,7 +101,7 @@ You can use the `timeout` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-hanzo = HanzoAI::Client.new(
+hanzo = Hanzoai::Client.new(
   timeout: nil # default is 60
 )
 
@@ -117,7 +117,7 @@ This library is written with [Sorbet type definitions](https://sorbet.org/docs/r
 
 What this means is that while you can use Sorbet to type check your code statically, and benefit from the [Sorbet Language Server](https://sorbet.org/docs/lsp) in your editor, there is no runtime type checking and execution overhead from Sorbet itself.
 
-Due to limitations with the Sorbet type system, where a method otherwise can take an instance of `HanzoAI::BaseModel` class, you will need to use the `**` splat operator to pass the arguments:
+Due to limitations with the Sorbet type system, where a method otherwise can take an instance of `Hanzoai::BaseModel` class, you will need to use the `**` splat operator to pass the arguments:
 
 Please follow Sorbet's [setup guides](https://sorbet.org/docs/adopting) for best experience.
 
@@ -131,13 +131,13 @@ hanzo.get_home(**model)
 
 ### Concurrency & Connection Pooling
 
-The `HanzoAI::Client` instances are thread-safe, and should be re-used across multiple threads. By default, each `Client` have their own HTTP connection pool, with a maximum number of connections equal to thread count.
+The `Hanzoai::Client` instances are thread-safe, and should be re-used across multiple threads. By default, each `Client` have their own HTTP connection pool, with a maximum number of connections equal to thread count.
 
 When the maximum number of connections has been checked out from the connection pool, the `Client` will wait for an in use connection to become available. The queue time for this mechanism is accounted for by the per-request timeout.
 
 Unless otherwise specified, other classes in the SDK do not have locks protecting their underlying data structure.
 
-Currently, `HanzoAI::Client` instances are only fork-safe if there are no in-flight HTTP requests.
+Currently, `Hanzoai::Client` instances are only fork-safe if there are no in-flight HTTP requests.
 
 ## Versioning
 

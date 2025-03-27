@@ -1,0 +1,11 @@
+module Hanzoai
+  module Resources
+    class Audio
+      attr_reader speech: Hanzoai::Resources::Audio::Speech
+
+      attr_reader transcriptions: Hanzoai::Resources::Audio::Transcriptions
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

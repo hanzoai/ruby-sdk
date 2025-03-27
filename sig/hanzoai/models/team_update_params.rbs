@@ -1,0 +1,77 @@
+module Hanzoai
+  module Models
+    type team_update_params =
+      {
+        team_id: String,
+        blocked: bool?,
+        budget_duration: String?,
+        guardrails: ::Array[String]?,
+        max_budget: Float?,
+        metadata: top?,
+        model_aliases: top?,
+        models: ::Array[top]?,
+        organization_id: String?,
+        rpm_limit: Integer?,
+        tags: ::Array[top]?,
+        team_alias: String?,
+        tpm_limit: Integer?,
+        llm_changed_by: String
+      }
+      & Hanzoai::request_parameters
+
+    class TeamUpdateParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      attr_accessor team_id: String
+
+      attr_accessor blocked: bool?
+
+      attr_accessor budget_duration: String?
+
+      attr_accessor guardrails: ::Array[String]?
+
+      attr_accessor max_budget: Float?
+
+      attr_accessor metadata: top?
+
+      attr_accessor model_aliases: top?
+
+      attr_accessor models: ::Array[top]?
+
+      attr_accessor organization_id: String?
+
+      attr_accessor rpm_limit: Integer?
+
+      attr_accessor tags: ::Array[top]?
+
+      attr_accessor team_alias: String?
+
+      attr_accessor tpm_limit: Integer?
+
+      attr_reader llm_changed_by: String?
+
+      def llm_changed_by=: (String) -> String
+
+      def initialize: (
+        team_id: String,
+        ?blocked: bool?,
+        ?budget_duration: String?,
+        ?guardrails: ::Array[String]?,
+        ?max_budget: Float?,
+        ?metadata: top?,
+        ?model_aliases: top?,
+        ?models: ::Array[top]?,
+        ?organization_id: String?,
+        ?rpm_limit: Integer?,
+        ?tags: ::Array[top]?,
+        ?team_alias: String?,
+        ?tpm_limit: Integer?,
+        ?llm_changed_by: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> void
+
+      def to_hash: -> Hanzoai::Models::team_update_params
+    end
+  end
+end

@@ -1,0 +1,15 @@
+module Hanzoai
+  module Resources
+    class Batches
+      class Cancel
+        def cancel: (
+          String batch_id,
+          ?provider: String?,
+          ?request_options: Hanzoai::request_opts
+        ) -> top
+
+        def initialize: (client: Hanzoai::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type anthropic_retrieve_params = {  } & Hanzoai::request_parameters
+
+    class AnthropicRetrieveParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::anthropic_retrieve_params
+    end
+  end
+end

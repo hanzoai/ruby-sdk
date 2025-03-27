@@ -1,0 +1,14 @@
+module Hanzoai
+  module Models
+    type assemblyai_patch_params = {  } & Hanzoai::request_parameters
+
+    class AssemblyaiPatchParams < Hanzoai::BaseModel
+      extend Hanzoai::RequestParameters::Converter
+      include Hanzoai::RequestParameters
+
+      def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+      def to_hash: -> Hanzoai::Models::assemblyai_patch_params
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module Hanzoai
+  module Resources
+    class Cache
+      attr_reader redis: Hanzoai::Resources::Cache::Redis
+
+      def delete: (?request_options: Hanzoai::request_opts) -> top
+
+      def flush_all: (?request_options: Hanzoai::request_opts) -> top
+
+      def ping: (
+        ?request_options: Hanzoai::request_opts
+      ) -> Hanzoai::Models::CachePingResponse
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

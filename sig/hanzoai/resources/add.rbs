@@ -1,0 +1,12 @@
+module Hanzoai
+  module Resources
+    class Add
+      def add_allowed_ip: (
+        ip: String,
+        ?request_options: Hanzoai::request_opts
+      ) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end

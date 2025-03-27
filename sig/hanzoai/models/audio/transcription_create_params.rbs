@@ -1,0 +1,22 @@
+module Hanzoai
+  module Models
+    module Audio
+      type transcription_create_params =
+        { file: (IO | StringIO) } & Hanzoai::request_parameters
+
+      class TranscriptionCreateParams < Hanzoai::BaseModel
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        attr_accessor file: IO | StringIO
+
+        def initialize: (
+          file: IO | StringIO,
+          ?request_options: Hanzoai::request_opts
+        ) -> void
+
+        def to_hash: -> Hanzoai::Models::Audio::transcription_create_params
+      end
+    end
+  end
+end

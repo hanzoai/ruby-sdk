@@ -1,0 +1,17 @@
+module Hanzoai
+  module Models
+    module Config
+      type pass_through_endpoint_create_params =
+        {  } & Hanzoai::request_parameters
+
+      class PassThroughEndpointCreateParams < Hanzoai::Models::Config::PassThroughGenericEndpoint
+        extend Hanzoai::RequestParameters::Converter
+        include Hanzoai::RequestParameters
+
+        def initialize: (?request_options: Hanzoai::request_opts) -> void
+
+        def to_hash: -> Hanzoai::Models::Config::pass_through_endpoint_create_params
+      end
+    end
+  end
+end

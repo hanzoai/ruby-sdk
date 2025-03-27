@@ -1,9 +1,0 @@
-module HanzoAI
-  module Resources
-    class FineTuning
-      attr_reader jobs: HanzoAI::Resources::FineTuning::Jobs
-
-      def initialize: (client: HanzoAI::Client) -> void
-    end
-  end
-end

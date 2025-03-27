@@ -1,0 +1,9 @@
+module Hanzoai
+  module Resources
+    class Settings
+      def retrieve: (?request_options: Hanzoai::request_opts) -> top
+
+      def initialize: (client: Hanzoai::Client) -> void
+    end
+  end
+end
