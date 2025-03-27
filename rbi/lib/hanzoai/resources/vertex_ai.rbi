@@ -5,7 +5,7 @@ module Hanzoai
     class VertexAI
       # Call LLM proxy via Vertex AI SDK.
       #
-      #   [Docs](https://docs.llm.ai/docs/pass_through/vertex_ai)
+      #   [Docs](https://docs.hanzo.ai/docs/pass_through/vertex_ai)
       sig do
         params(
           endpoint: String,
@@ -18,7 +18,7 @@ module Hanzoai
 
       # Call LLM proxy via Vertex AI SDK.
       #
-      #   [Docs](https://docs.llm.ai/docs/pass_through/vertex_ai)
+      #   [Docs](https://docs.hanzo.ai/docs/pass_through/vertex_ai)
       sig do
         params(
           endpoint: String,
@@ -31,7 +31,7 @@ module Hanzoai
 
       # Call LLM proxy via Vertex AI SDK.
       #
-      #   [Docs](https://docs.llm.ai/docs/pass_through/vertex_ai)
+      #   [Docs](https://docs.hanzo.ai/docs/pass_through/vertex_ai)
       sig do
         params(
           endpoint: String,
@@ -44,7 +44,7 @@ module Hanzoai
 
       # Call LLM proxy via Vertex AI SDK.
       #
-      #   [Docs](https://docs.llm.ai/docs/pass_through/vertex_ai)
+      #   [Docs](https://docs.hanzo.ai/docs/pass_through/vertex_ai)
       sig do
         params(
           endpoint: String,
@@ -57,7 +57,7 @@ module Hanzoai
 
       # Call LLM proxy via Vertex AI SDK.
       #
-      #   [Docs](https://docs.llm.ai/docs/pass_through/vertex_ai)
+      #   [Docs](https://docs.hanzo.ai/docs/pass_through/vertex_ai)
       sig do
         params(
           endpoint: String,

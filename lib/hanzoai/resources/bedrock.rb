@@ -3,7 +3,7 @@
 module Hanzoai
   module Resources
     class Bedrock
-      # [Docs](https://docs.llm.ai/docs/pass_through/bedrock)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/bedrock)
       #
       # @param endpoint [String]
       #
@@ -21,7 +21,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/bedrock)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/bedrock)
       #
       # @param endpoint [String]
       #
@@ -39,7 +39,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/bedrock)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/bedrock)
       #
       # @param endpoint [String]
       #
@@ -57,7 +57,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/bedrock)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/bedrock)
       #
       # @param endpoint [String]
       #
@@ -75,7 +75,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/bedrock)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/bedrock)
       #
       # @param endpoint [String]
       #
