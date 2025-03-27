@@ -3,7 +3,7 @@
 module Hanzoai
   module Resources
     class Anthropic
-      # [Docs](https://docs.llm.ai/docs/anthropic_completion)
+      # [Docs](https://docs.hanzo.ai/docs/anthropic_completion)
       #
       # @param endpoint [String]
       #
@@ -21,7 +21,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/anthropic_completion)
+      # [Docs](https://docs.hanzo.ai/docs/anthropic_completion)
       #
       # @param endpoint [String]
       #
@@ -39,7 +39,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/anthropic_completion)
+      # [Docs](https://docs.hanzo.ai/docs/anthropic_completion)
       #
       # @param endpoint [String]
       #
@@ -57,7 +57,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/anthropic_completion)
+      # [Docs](https://docs.hanzo.ai/docs/anthropic_completion)
       #
       # @param endpoint [String]
       #
@@ -75,7 +75,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/anthropic_completion)
+      # [Docs](https://docs.hanzo.ai/docs/anthropic_completion)
       #
       # @param endpoint [String]
       #

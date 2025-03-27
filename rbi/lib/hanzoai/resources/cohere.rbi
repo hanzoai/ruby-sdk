@@ -3,7 +3,7 @@
 module Hanzoai
   module Resources
     class Cohere
-      # [Docs](https://docs.llm.ai/docs/pass_through/cohere)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/cohere)
       sig do
         params(
           endpoint: String,
@@ -14,7 +14,7 @@ module Hanzoai
       def create(endpoint, request_options: {})
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/cohere)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/cohere)
       sig do
         params(
           endpoint: String,
@@ -25,7 +25,7 @@ module Hanzoai
       def retrieve(endpoint, request_options: {})
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/cohere)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/cohere)
       sig do
         params(
           endpoint: String,
@@ -36,7 +36,7 @@ module Hanzoai
       def update(endpoint, request_options: {})
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/cohere)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/cohere)
       sig do
         params(
           endpoint: String,
@@ -47,7 +47,7 @@ module Hanzoai
       def delete(endpoint, request_options: {})
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/cohere)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/cohere)
       sig do
         params(
           endpoint: String,
