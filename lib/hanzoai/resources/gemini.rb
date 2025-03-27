@@ -3,7 +3,7 @@
 module Hanzoai
   module Resources
     class Gemini
-      # [Docs](https://docs.llm.ai/docs/pass_through/google_ai_studio)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/google_ai_studio)
       #
       # @param endpoint [String]
       #
@@ -21,7 +21,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/google_ai_studio)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/google_ai_studio)
       #
       # @param endpoint [String]
       #
@@ -39,7 +39,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/google_ai_studio)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/google_ai_studio)
       #
       # @param endpoint [String]
       #
@@ -57,7 +57,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/google_ai_studio)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/google_ai_studio)
       #
       # @param endpoint [String]
       #
@@ -75,7 +75,7 @@ module Hanzoai
         )
       end
 
-      # [Docs](https://docs.llm.ai/docs/pass_through/google_ai_studio)
+      # [Docs](https://docs.hanzo.ai/docs/pass_through/google_ai_studio)
       #
       # @param endpoint [String]
       #
