@@ -15,6 +15,11 @@ module Hanzoai
     # Default max retry delay in seconds.
     DEFAULT_MAX_RETRY_DELAY = 8.0
 
+    # rubocop:disable Style/MutableConstant
+    # @type [Hash{Symbol=>String}]
+    ENVIRONMENTS = {production: "https://api.hanzo.ai", sandbox: "https://api.sandbox.hanzo.ai"}
+    # rubocop:enable Style/MutableConstant
+
     # The default name of the subscription key header of Azure
     # @return [String]
     attr_reader :api_key
@@ -183,6 +188,13 @@ module Hanzoai
 
     # Creates and returns a new client for interacting with the API.
     #
+    # @param environment [:production, :sandbox, nil] Specifies the environment to use for the API.
+    #
+    #   Each environment maps to a different base URL:
+    #
+    #   - `production` corresponds to `https://api.hanzo.ai`
+    #   - `sandbox` corresponds to `https://api.sandbox.hanzo.ai`
+    #
     # @param base_url [String, nil] Override the default base URL for the API, e.g., `"https://api.example.com/v2/"`
     #
     # @param api_key [String, nil] The default name of the subscription key header of Azure Defaults to
@@ -196,6 +208,7 @@ module Hanzoai
     #
     # @param max_retry_delay [Float]
     def initialize(
+      environment: nil,
       base_url: nil,
       api_key: ENV["HANZO_API_KEY"],
       max_retries: DEFAULT_MAX_RETRIES,
@@ -203,7 +216,16 @@ module Hanzoai
       initial_retry_delay: DEFAULT_INITIAL_RETRY_DELAY,
       max_retry_delay: DEFAULT_MAX_RETRY_DELAY
     )
-      base_url ||= "https://api.hanzo.ai"
+      case [environment, base_url]
+      in [Symbol | String, String]
+        raise ArgumentError.new("both environment and base_url given, expected only one")
+      in [Symbol | String, nil]
+        base_url = ENVIRONMENTS.fetch(environment.to_sym) do
+          raise ArgumentError.new("environment must be one of #{ENVIRONMENTS.keys}, got #{environment}")
+        end
+      else
+        base_url ||= ENVIRONMENTS.fetch(:production)
+      end
 
       if api_key.nil?
         raise ArgumentError.new("api_key is required")

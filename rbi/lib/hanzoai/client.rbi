@@ -10,6 +10,12 @@ module Hanzoai
 
     DEFAULT_MAX_RETRY_DELAY = T.let(8.0, Float)
 
+    ENVIRONMENTS =
+      T.let(
+        {production: "https://api.hanzo.ai", sandbox: "https://api.sandbox.hanzo.ai"},
+        T::Hash[Symbol, String]
+      )
+
     # The default name of the subscription key header of Azure
     sig { returns(String) }
     attr_reader :api_key
@@ -174,6 +180,7 @@ module Hanzoai
     # Creates and returns a new client for interacting with the API.
     sig do
       params(
+        environment: NilClass,
         base_url: T.nilable(String),
         api_key: T.nilable(String),
         max_retries: Integer,
@@ -184,6 +191,13 @@ module Hanzoai
         .returns(T.attached_class)
     end
     def self.new(
+      # Specifies the environment to use for the API.
+      #
+      #   Each environment maps to a different base URL:
+      #
+      #   - `production` corresponds to `https://api.hanzo.ai`
+      #   - `sandbox` corresponds to `https://api.sandbox.hanzo.ai`
+      environment: nil,
       # Override the default base URL for the API, e.g., `"https://api.example.com/v2/"`
       base_url: nil,
       # The default name of the subscription key header of Azure Defaults to
