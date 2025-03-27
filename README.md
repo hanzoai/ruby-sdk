@@ -37,7 +37,8 @@ require "bundler/setup"
 require "hanzoai"
 
 hanzo = Hanzoai::Client.new(
-  api_key: "My API Key" # defaults to ENV["HANZO_API_KEY"]
+  api_key: "My API Key", # defaults to ENV["HANZO_API_KEY"]
+  environment: "sandbox" # defaults to "production"
 )
 
 response = hanzo.get_home
