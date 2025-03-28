@@ -75,15 +75,15 @@ module Hanzoai
           module Mode
             extend Hanzoai::Union
 
-            StringArray = Hanzoai::ArrayOf[String]
-
             variant String
 
-            variant Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams::Mode::StringArray
+            variant -> { Hanzoai::Models::GuardrailListResponse::Guardrail::LlmParams::Mode::StringArray }
 
             # @!parse
             #   # @return [Array(String, Array<String>)]
             #   def self.variants; end
+
+            StringArray = Hanzoai::ArrayOf[String]
           end
         end
       end

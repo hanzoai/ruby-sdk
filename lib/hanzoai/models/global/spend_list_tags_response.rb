@@ -176,33 +176,33 @@ module Hanzoai
         module Messages
           extend Hanzoai::Union
 
-          UnionMember1Array = Hanzoai::ArrayOf[Hanzoai::Unknown]
-
           variant String
 
-          variant Hanzoai::Models::Global::SpendListTagsResponseItem::Messages::UnionMember1Array
+          variant -> { Hanzoai::Models::Global::SpendListTagsResponseItem::Messages::UnionMember1Array }
 
           variant Hanzoai::Unknown
 
           # @!parse
           #   # @return [Array(String, Array<Object>, Object)]
           #   def self.variants; end
+
+          UnionMember1Array = Hanzoai::ArrayOf[Hanzoai::Unknown]
         end
 
         module Response
           extend Hanzoai::Union
 
-          UnionMember1Array = Hanzoai::ArrayOf[Hanzoai::Unknown]
-
           variant String
 
-          variant Hanzoai::Models::Global::SpendListTagsResponseItem::Response::UnionMember1Array
+          variant -> { Hanzoai::Models::Global::SpendListTagsResponseItem::Response::UnionMember1Array }
 
           variant Hanzoai::Unknown
 
           # @!parse
           #   # @return [Array(String, Array<Object>, Object)]
           #   def self.variants; end
+
+          UnionMember1Array = Hanzoai::ArrayOf[Hanzoai::Unknown]
         end
 
         module StartTime

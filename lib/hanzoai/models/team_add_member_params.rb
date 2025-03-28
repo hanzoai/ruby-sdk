@@ -35,15 +35,15 @@ module Hanzoai
       module Member
         extend Hanzoai::Union
 
-        MemberArray = Hanzoai::ArrayOf[-> { Hanzoai::Models::Member }]
-
-        variant Hanzoai::Models::TeamAddMemberParams::Member::MemberArray
+        variant -> { Hanzoai::Models::TeamAddMemberParams::Member::MemberArray }
 
         variant -> { Hanzoai::Models::Member }
 
         # @!parse
         #   # @return [Array(Array<Hanzoai::Models::Member>, Hanzoai::Models::Member)]
         #   def self.variants; end
+
+        MemberArray = Hanzoai::ArrayOf[-> { Hanzoai::Models::Member }]
       end
     end
   end

@@ -32,11 +32,11 @@ module Hanzoai
       module Member
         extend Hanzoai::Union
 
+        def self?.variants: -> [::Array[Hanzoai::Models::Member], Hanzoai::Models::Member]
+
         type member_array = ::Array[Hanzoai::Models::Member]
 
         MemberArray: member_array
-
-        def self?.variants: -> [::Array[Hanzoai::Models::Member], Hanzoai::Models::Member]
       end
     end
   end

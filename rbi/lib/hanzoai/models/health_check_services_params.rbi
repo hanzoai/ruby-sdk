@@ -36,6 +36,10 @@ module Hanzoai
       module Service
         extend Hanzoai::Union
 
+        sig { override.returns([Hanzoai::Models::HealthCheckServicesParams::Service::OrSymbol, String]) }
+        def self.variants
+        end
+
         TaggedSymbol = T.type_alias { T.all(Symbol, Hanzoai::Models::HealthCheckServicesParams::Service) }
         OrSymbol =
           T.type_alias { T.any(Symbol, Hanzoai::Models::HealthCheckServicesParams::Service::TaggedSymbol) }
@@ -49,10 +53,6 @@ module Hanzoai
         EMAIL = T.let(:email, Hanzoai::Models::HealthCheckServicesParams::Service::TaggedSymbol)
         BRAINTRUST = T.let(:braintrust, Hanzoai::Models::HealthCheckServicesParams::Service::TaggedSymbol)
         DATADOG = T.let(:datadog, Hanzoai::Models::HealthCheckServicesParams::Service::TaggedSymbol)
-
-        sig { override.returns([Hanzoai::Models::HealthCheckServicesParams::Service::OrSymbol, String]) }
-        def self.variants
-        end
       end
     end
   end
