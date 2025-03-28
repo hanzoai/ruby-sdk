@@ -98,11 +98,11 @@ module Hanzoai
           module Mode
             extend Hanzoai::Union
 
-            StringArray = T.let(Hanzoai::ArrayOf[String], Hanzoai::Converter)
-
             sig { override.returns([String, T::Array[String]]) }
             def self.variants
             end
+
+            StringArray = T.let(Hanzoai::ArrayOf[String], Hanzoai::Converter)
           end
         end
       end

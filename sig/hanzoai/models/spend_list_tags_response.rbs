@@ -103,11 +103,11 @@ module Hanzoai
       module Messages
         extend Hanzoai::Union
 
+        def self?.variants: -> [String, ::Array[top], top]
+
         type union_member1_array = ::Array[top]
 
         UnionMember1Array: union_member1_array
-
-        def self?.variants: -> [String, ::Array[top], top]
       end
 
       type response = String | ::Array[top] | top
@@ -115,11 +115,11 @@ module Hanzoai
       module Response
         extend Hanzoai::Union
 
+        def self?.variants: -> [String, ::Array[top], top]
+
         type union_member1_array = ::Array[top]
 
         UnionMember1Array: union_member1_array
-
-        def self?.variants: -> [String, ::Array[top], top]
       end
 
       type start_time = String | Time

@@ -35,15 +35,15 @@ module Hanzoai
       module Member
         extend Hanzoai::Union
 
-        OrgMemberArray = Hanzoai::ArrayOf[-> { Hanzoai::Models::OrgMember }]
-
-        variant Hanzoai::Models::OrganizationAddMemberParams::Member::OrgMemberArray
+        variant -> { Hanzoai::Models::OrganizationAddMemberParams::Member::OrgMemberArray }
 
         variant -> { Hanzoai::Models::OrgMember }
 
         # @!parse
         #   # @return [Array(Array<Hanzoai::Models::OrgMember>, Hanzoai::Models::OrgMember)]
         #   def self.variants; end
+
+        OrgMemberArray = Hanzoai::ArrayOf[-> { Hanzoai::Models::OrgMember }]
       end
     end
   end

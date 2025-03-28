@@ -154,21 +154,21 @@ module Hanzoai
         module Messages
           extend Hanzoai::Union
 
-          UnionMember1Array = T.let(Hanzoai::ArrayOf[Hanzoai::Unknown], Hanzoai::Converter)
-
           sig { override.returns([String, T::Array[T.anything], T.anything]) }
           def self.variants
           end
+
+          UnionMember1Array = T.let(Hanzoai::ArrayOf[Hanzoai::Unknown], Hanzoai::Converter)
         end
 
         module Response
           extend Hanzoai::Union
 
-          UnionMember1Array = T.let(Hanzoai::ArrayOf[Hanzoai::Unknown], Hanzoai::Converter)
-
           sig { override.returns([String, T::Array[T.anything], T.anything]) }
           def self.variants
           end
+
+          UnionMember1Array = T.let(Hanzoai::ArrayOf[Hanzoai::Unknown], Hanzoai::Converter)
         end
 
         module StartTime

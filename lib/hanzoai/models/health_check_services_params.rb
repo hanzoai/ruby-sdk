@@ -25,6 +25,28 @@ module Hanzoai
       module Service
         extend Hanzoai::Union
 
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::SLACK_BUDGET_ALERTS }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::LANGFUSE }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::SLACK }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::OPENMETER }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::WEBHOOK }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::EMAIL }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::BRAINTRUST }
+
+        variant const: -> { Hanzoai::Models::HealthCheckServicesParams::Service::DATADOG }
+
+        variant String
+
+        # @!parse
+        #   # @return [Array(Symbol, String)]
+        #   def self.variants; end
+
         # @!group
 
         SLACK_BUDGET_ALERTS = :slack_budget_alerts
@@ -37,28 +59,6 @@ module Hanzoai
         DATADOG = :datadog
 
         # @!endgroup
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::SLACK_BUDGET_ALERTS
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::LANGFUSE
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::SLACK
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::OPENMETER
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::WEBHOOK
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::EMAIL
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::BRAINTRUST
-
-        variant const: Hanzoai::Models::HealthCheckServicesParams::Service::DATADOG
-
-        variant String
-
-        # @!parse
-        #   # @return [Array(Symbol, String)]
-        #   def self.variants; end
       end
     end
   end
