@@ -31,15 +31,6 @@ module Hanzoai
       module Service
         extend Hanzoai::Union
 
-        SLACK_BUDGET_ALERTS: :slack_budget_alerts
-        LANGFUSE: :langfuse
-        SLACK: :slack
-        OPENMETER: :openmeter
-        WEBHOOK: :webhook
-        EMAIL: :email
-        BRAINTRUST: :braintrust
-        DATADOG: :datadog
-
         def self?.variants: -> [(:slack_budget_alerts
         | :langfuse
         | :slack
@@ -48,6 +39,15 @@ module Hanzoai
         | :email
         | :braintrust
         | :datadog), String]
+
+        SLACK_BUDGET_ALERTS: :slack_budget_alerts
+        LANGFUSE: :langfuse
+        SLACK: :slack
+        OPENMETER: :openmeter
+        WEBHOOK: :webhook
+        EMAIL: :email
+        BRAINTRUST: :braintrust
+        DATADOG: :datadog
       end
     end
   end
