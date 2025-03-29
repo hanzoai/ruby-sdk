@@ -63,11 +63,11 @@ module Hanzoai
           module Mode
             extend Hanzoai::Union
 
+            def self?.variants: -> [String, ::Array[String]]
+
             type string_array = ::Array[String]
 
             StringArray: string_array
-
-            def self?.variants: -> [String, ::Array[String]]
           end
         end
       end

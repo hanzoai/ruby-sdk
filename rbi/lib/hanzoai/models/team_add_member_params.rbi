@@ -48,11 +48,11 @@ module Hanzoai
       module Member
         extend Hanzoai::Union
 
-        MemberArray = T.let(Hanzoai::ArrayOf[Hanzoai::Models::Member], Hanzoai::Converter)
-
         sig { override.returns([T::Array[Hanzoai::Models::Member], Hanzoai::Models::Member]) }
         def self.variants
         end
+
+        MemberArray = T.let(Hanzoai::ArrayOf[Hanzoai::Models::Member], Hanzoai::Converter)
       end
     end
   end
